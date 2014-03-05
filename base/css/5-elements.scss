@@ -1,0 +1,154 @@
+/**
+ * Global Elements
+ */
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html{
+	color: $white;
+    overflow-y:scroll;
+    min-height:100%;
+}
+
+body {
+	font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-families;
+	padding: 0;
+  	margin: 0;
+	background: linear-gradient(to right top, rgb(126, 154, 201) 2%, rgb(14, 30, 49) 86%);
+	background-attachment: fixed;
+}
+
+
+/*
+ * Block Elements: Margin Bottom for vertical rythm
+ */
+
+h1,h2,h3,h4,h5,h6,hgroup,
+ul,ol,dl, hr,
+blockquote,p,address,
+table,
+fieldset,figure,
+pre {
+    @extend .cf;
+    padding: 0;
+    margin-top: 0;
+	margin-bottom:($base-spacing / $base-font-size)*1rem;
+}
+
+
+/*
+ * `hr` elements only take up a few pixels, so we need to give them special
+ * treatment regarding vertical rhythm.
+ */
+
+hr {
+    margin-bottom:(($base-spacing - 2px) / $base-font-size)*1rem;
+}
+
+
+
+/*
+ * Typography
+ */
+
+h1, .alpha{
+	@include font-size($h1-size);
+	font-weight: normal;
+}
+h2, .beta{
+	@include font-size($h2-size);
+	font-weight: normal;
+}
+h3, .gamma{
+	@include font-size($h3-size);
+	font-weight: normal;
+}
+h4, .delta{
+	@include font-size($h4-size);
+	font-weight: normal;
+}
+h5, .epsilon{
+	@include font-size($h5-size);
+	font-weight: normal;
+}
+h6, .zeta{
+    @include font-size($h6-size);
+	font-weight: normal;
+}
+
+.giga {
+    @include font-size($giga-size);
+}
+.mega {
+    @include font-size($mega-size);
+}
+.kilo {
+    @include font-size($kilo-size);
+}
+
+.small {
+    @include font-size($small-size);
+}
+
+.micro{
+    @include font-size($micro-size);
+}
+
+
+/*
+ * Links
+ */
+
+a {
+	&,
+    &:active,
+    &:focus{
+		color: $hilite;
+        text-decoration:none;
+    }
+    &:hover {
+    	text-decoration: underline;
+    }
+}
+
+
+/*
+ * Images
+ */
+
+img{
+    height:auto;
+}
+
+
+/*
+ * Forms
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin-right: $half-spacing;
+}
+
+label[for] {
+	cursor: pointer;
+}
+
+
+/*
+ * Selected Text Styling
+ */
+
+::selection {
+	color: $dark;
+	background: $white; /* Safari */
+}
+::-moz-selection {
+	color: $dark;
+	background: $white; /* Firefox */
+}
+
+

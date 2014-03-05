@@ -1,0 +1,117 @@
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ */
+
+$debug-mode: false;
+
+
+/**
+ * Base stuff
+ */
+
+$base-font-size:    14px!default;
+$base-line-height:  24px!default;
+
+
+/**
+ * Font Families
+ */
+
+// Open Sans
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+$font-families: 'Open Sans', sans-serif;
+
+
+// Icon Moon
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../frontend/fonts/iconmoon/icomoon.eot?rofuzr');
+	src:url('../frontend/fonts/iconmoon/icomoon.eot?#iefixrofuzr') format('embedded-opentype'),
+		url('../frontend/fonts/iconmoon/icomoon.woff?rofuzr') format('woff'),
+		url('../frontend/fonts/iconmoon/icomoon.ttf?rofuzr') format('truetype'),
+		url('../frontend/fonts/iconmoon/icomoon.svg?rofuzr#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+%iconMoonSettings {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	@extend %iconMoonSettings;
+}
+
+.icon-arrow-down:before {
+	content: "\e600";
+}
+
+
+
+/**
+ * Font-sizes (in pixels).
+ */
+
+$giga-size:		96px!default;
+$mega-size:		72px!default;
+$kilo-size:		48px!default;
+
+$h1-size:		32px!default; // .alpha
+$h2-size:		26px!default; // .beta
+$h3-size:		18px!default; // .gamma
+$h4-size:		20px!default; // .delta
+$h5-size:		16px!default; // .epsilon
+$h6-size:		14px!default; // .zeta
+
+$small-size:	12px!default;
+$micro-size:	10px!default;
+
+
+/**
+ * Base Spacing Unit
+ */
+
+$base-spacing: 		$base-line-height!default;
+$half-spacing: 		$base-spacing / 2!default;
+$quart-spacing: 	$base-spacing / 4!default;
+$double-spacing: 	$base-spacing * 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+
+/**
+ * Alpha Transparence
+ */
+
+$alpha: 0.2;
+
+/**
+ * Colors
+ */
+
+$white:		#ffffff;
+$black:		#000000;
+
+$hilite:	#A1DAF7;
+$dark:		#213249;
+$decent:	#cbcfd5;
+
+
+// Custom
+
+$wellness:	#006DCA;
+$sport:		#6EEC00;
+$med:		#FF1457;
