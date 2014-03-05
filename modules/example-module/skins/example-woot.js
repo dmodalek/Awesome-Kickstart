@@ -1,4 +1,6 @@
-(function ($) {
+(function () {
+
+	'use strict';
 
 	Tc.Module.Example.Woot = function(parent) {
 
@@ -18,7 +20,7 @@
 
 			// callback
 			parent.after();
-		}
+		};
 
 	};
 

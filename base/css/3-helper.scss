@@ -1,8 +1,33 @@
+/**
+ * Font size with line-height
+ * - Create font-sizes with appropriate line heights
+ */
+
+@mixin font-size($font-size){
+    font-size:$font-size;
+    font-size:($font-size / $base-font-size)*1rem;
+    line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+}
 
 /**
- * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
- * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
- * and over in your markup.
+ * Ellipsis
+ * - Truncate overly long text with ...
+ */
+
+@mixin ellipsis($ellipsis-boundary: 100%){
+    max-width:$ellipsis-boundary;
+    white-space:nowrap;
+    overflow:hidden;
+	display: inline-block;
+    text-overflow:ellipsis;
+}
+
+.ellipsis { @include ellipsis; }
+
+
+/**
+ * Micro clearfix
+ * - As per http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
  */
 
 .cf {
@@ -16,7 +41,7 @@
 }
 
 
-/**w
+/**
  * Image replacement
  */
 
@@ -32,57 +57,3 @@
 		height: 150%;
 	}
 }
-
-/*
- * Centered
- */
-
-.centered {
-	margin: 0 auto;
-}
-
-
-/**
- * Floats and alignment
- */
-
-.fr { float:right; }
-.fl { float:left; }
-
-.text-center {
-	text-align:center;
-}
-
-/**
- * Create a fully formed type style (sizing and vertical rhythm) by passing in a
- * single value, e.g.:
- *
- * `@include font-size(10px);`
- *
- * Thanks to @redclov3r for the `line-height` Sass:
- * twitter.com/redclov3r/status/250301539321798657
- */
-
-@mixin font-size($font-size){
-    font-size:$font-size;
-    font-size:($font-size / $base-font-size)*1rem;
-    line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
-}
-
-/**
- * Force overly long spans of text to truncate, e.g.:
- *
-   `@include truncate(100%);`
- *
- * Where `$truncation-boundary` is a united measurement.
- */
-
-@mixin ellipsis($ellipsis-boundary: 100%){
-    max-width:$ellipsis-boundary;
-    white-space:nowrap;
-    overflow:hidden;
-	display: inline-block;
-    text-overflow:ellipsis;
-}
-
-.ellipsis { @include ellipsis; }

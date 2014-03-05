@@ -1,13 +1,8 @@
 /**
- *
  * Awesome Grid
- *
  */
 
-
-/*
- * Customize
- */
+// Vars
 
 $grid-fixed-width: 1140px;
 $grid-fixed-gutter: 20px;
@@ -20,9 +15,7 @@ $grid-fluid-gutter: percentage((100 / ($grid-fixed-width / $grid-fixed-gutter)) 
 $grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols;
 
 
-/*
- * Your Grid Mixins
- */
+// Mixins
 
 @mixin row() {
 	@extend .cf;
@@ -48,12 +41,21 @@ $grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols
 }
 
 
-/*
- * Debug
- */
+// Classes
 
-@mixin _debug($label: '', $cols: 12) {
+.row {
+	@include row();
+}
 
+	.col {
+		@include col();
+	}
+
+
+// Debug
+
+//@mixin _debug($label: '', $cols: 12) {
+//
 //	@at-root .grid-debug#{&},
 //    .grid-debug & {
 //
@@ -98,22 +100,6 @@ $grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols
 //			margin-bottom: 4px !important;
 //		}
 //	}
-}
-
-
-/*
- * Html Classes
- */
-
-.row {
-	@include row();
-}
-
-	.col {
-		@include col();
-	}
-
-
-
-
+//}
+//
 

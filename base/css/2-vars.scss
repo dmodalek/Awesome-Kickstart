@@ -1,65 +1,20 @@
-/**
- * Debug mode will visually highlight any potential markup/accessibility quirks
- * in the browser. Set to `true` or `false`.
- */
-
-$debug-mode: false;
-
 
 /**
- * Base stuff
+ * Basic spacing
  */
 
 $base-font-size:    14px!default;
 $base-line-height:  24px!default;
+$spacing: 			$base-line-height!default;
+$line-height-ratio: $base-line-height / $base-font-size;
 
 
 /**
- * Font Families
+ * Colors
  */
 
-// Open Sans
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
-$font-families: 'Open Sans', sans-serif;
-
-
-// Icon Moon
-
-@font-face {
-	font-family: 'icomoon';
-	src:url('../frontend/fonts/iconmoon/icomoon.eot?rofuzr');
-	src:url('../frontend/fonts/iconmoon/icomoon.eot?#iefixrofuzr') format('embedded-opentype'),
-		url('../frontend/fonts/iconmoon/icomoon.woff?rofuzr') format('woff'),
-		url('../frontend/fonts/iconmoon/icomoon.ttf?rofuzr') format('truetype'),
-		url('../frontend/fonts/iconmoon/icomoon.svg?rofuzr#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-%iconMoonSettings {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-	@extend %iconMoonSettings;
-}
-
-.icon-arrow-down:before {
-	content: "\e600";
-}
-
+$brand:	#213249;
+$copy:	#A1DAF7;
 
 
 /**
@@ -82,36 +37,42 @@ $micro-size:	10px!default;
 
 
 /**
- * Base Spacing Unit
+ * Fonts Families
  */
 
-$base-spacing: 		$base-line-height!default;
-$half-spacing: 		$base-spacing / 2!default;
-$quart-spacing: 	$base-spacing / 4!default;
-$double-spacing: 	$base-spacing * 2!default;
-$line-height-ratio: $base-line-height / $base-font-size;
+$font-families: 'Open Sans', sans-serif;
+
+// Open Sans
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+// Icon Moon
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/iconmoon/icomoon.eot?rofuzr');
+	src:url('../fonts/iconmoon/icomoon.eot?#iefixrofuzr') format('embedded-opentype'),
+		url('../fonts/iconmoon/icomoon.woff?rofuzr') format('woff'),
+		url('../fonts/iconmoon/icomoon.ttf?rofuzr') format('truetype'),
+		url('../fonts/iconmoon/icomoon.svg?rofuzr#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-down:before {
+	content: "\e600";
+}
 
 
-/**
- * Alpha Transparence
- */
-
-$alpha: 0.2;
-
-/**
- * Colors
- */
-
-$white:		#ffffff;
-$black:		#000000;
-
-$hilite:	#A1DAF7;
-$dark:		#213249;
-$decent:	#cbcfd5;
-
-
-// Custom
-
-$wellness:	#006DCA;
-$sport:		#6EEC00;
-$med:		#FF1457;

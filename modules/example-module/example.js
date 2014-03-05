@@ -1,4 +1,6 @@
-(function ($) {
+(function () {
+
+	'use strict';
 
 	Tc.Module.Example = Tc.Module.extend({
 
