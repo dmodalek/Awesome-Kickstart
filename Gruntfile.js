@@ -1,7 +1,6 @@
 /*!
- * Awesome Frontend Boilerplate Gruntfile
+ * Awesome Frontend Boilerplate
  * https://github.com/dmodalek/awesome-frontend-boilerplate
- * @author Dominic Modalek
  */
 
 'use strict';
@@ -209,6 +208,19 @@ module.exports = function (grunt) {
 		'concat:dev',
 		'connect:livereload',
 		'open',
+		'watch'
+	]);
+
+
+	/**
+	 * Dev task without opening
+	 * Run `grunt` on the command line
+	 */
+	grunt.registerTask('dev', [
+		'sass:dev',
+		'jshint',
+		'concat:dev',
+		'connect:livereload',
 		'watch'
 	]);
 

@@ -1,3 +1,5 @@
+<? require '/php/terrific.php'; ?>
+
 <!doctype html>
 <html class="no-js">
 <head>
@@ -21,21 +23,27 @@
 </head>
 <body>
 <header class="header" role="banner">
+
 	<div class="logo">
 		<a href="/">
 			<img src="img/example-logo.png" alt="Logo">
 		</a>
 	</div>
+
 	<nav class="nav" role="navigation">
 		<ul>
 			<li>
-				<a href="/">Navigation</a>
+				<a href="/"></a>
 			</li>
 		</ul>
 	</nav>
 </header>
 
-<main class="main" role="main"></main>
+<main class="main" role="main">
+
+	<?= module('example-module') ?>
+
+</main>
 
 <aside class="sidebar" role="complementary"></aside>
 
@@ -46,7 +54,7 @@
 <script src="js/scripts.min.js"></script>
 
 <script>
-	(function (f, i, r, e, s, h, l) {
+	(function (f, i, r, e, s, h, l) {®
 		i['GoogleAnalyticsObject'] = s;
 		f[s] = f[s] || function () {
 			(f[s].q = f[s].q || []).push(arguments)

@@ -1,7 +1,3 @@
-# FireShell
-# http://getfireshell.com
-# @author Todd Motto
-
 node_modules
 .DS_Store
 .tmp
