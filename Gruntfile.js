@@ -125,6 +125,16 @@ module.exports = function (grunt) {
 			}
 		},
 
+		autoprefixer: {
+			options: {
+				cascade: true
+			},
+			all: {
+				src: '<%= project.public %>/css/style.min.css',
+				dest: '<%= project.public %>/css/style.min.css'
+			}
+		},
+
 		/**
 		 * Runs tasks against changed watched files
 		 * https://github.com/gruntjs/grunt-contrib-watch
@@ -161,6 +171,7 @@ module.exports = function (grunt) {
 	 */
 	grunt.registerTask('default', [
 		'sass:dev',
+		'autoprefixer',
 		'jshint',
 		'concat:dev',
 		'watch'
@@ -173,6 +184,7 @@ module.exports = function (grunt) {
 	 */
 	grunt.registerTask('dev', [
 		'sass:dev',
+		'autoprefixer',
 		'jshint',
 		'concat:dev',
 		'watch'
@@ -185,6 +197,7 @@ module.exports = function (grunt) {
 	 */
 	grunt.registerTask('prod', [
 		'sass:prod',
+		'autoprefixer',
 		'jshint',
 		'uglify',
 	]);

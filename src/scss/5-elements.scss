@@ -139,11 +139,5 @@ label[for] {
 
 ::selection {
 	color: $brand;
-	background: $copy; /* Safari */
+	background: $copy;
 }
-::-moz-selection {
-	color: $brand;
-	background: $copy; /* Firefox */
-}
-
-
