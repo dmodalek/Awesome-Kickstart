@@ -1,5 +1,4 @@
-<? require '/php/terrific.php'; ?>
-
+<? include '/php/terrific.php'; ?>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -20,8 +19,11 @@
 	<script src="/js/vendor/html5shiv-printshiv-3.7.1.js" type="text/javascript"></script>
 	<![endif]-->
 
+	<!-- Live Reload !-->
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
 </head>
-<body>
+<body class="mod-layout">
 <header class="header" role="banner">
 
 	<div class="logo">
@@ -38,10 +40,9 @@
 		</ul>
 	</nav>
 </header>
-
 <main class="main" role="main">
 
-	<?= module('example-module') ?>
+	<?php echo module('example-module') ?>
 
 </main>
 

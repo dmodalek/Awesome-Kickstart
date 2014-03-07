@@ -16,8 +16,6 @@ body {
 	font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-families;
 	padding: 0;
   	margin: 0;
-	background: linear-gradient(to right top, rgb(126, 154, 201) 2%, rgb(14, 30, 49) 86%);
-	background-attachment: fixed;
 }
 
 
@@ -46,8 +44,6 @@ pre {
 hr {
     margin-bottom:(($spacing - 2px) / $base-font-size)*1rem;
 }
-
-
 
 /*
  * Typography

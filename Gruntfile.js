@@ -6,17 +6,6 @@
 'use strict';
 
 /**
- * Livereload and connect variables
- */
-var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({
-	port: LIVERELOAD_PORT
-});
-var mountFolder = function (connect, dir) {
-	return connect.static(require('path').resolve(dir));
-};
-
-/**
  * Grunt module
  */
 module.exports = function (grunt) {
@@ -57,27 +46,6 @@ module.exports = function (grunt) {
 		////////////////////////////////////////////////////////////////////////////////
 
 		// Tasks
-
-		/**
-		 * Connect port/livereload
-		 * https://github.com/gruntjs/grunt-contrib-connect
-		 * Starts a local webserver and injects
-		 * livereload snippet
-		 */
-
-		connect: {
-			options: {
-				port: 9000,
-				hostname: '*'
-			},
-			livereload: {
-				options: {
-					middleware: function (connect) {
-						return [lrSnippet, mountFolder(connect, 'public')];
-					}
-				}
-			}
-		},
 
 		/**
 		 * JSHint
@@ -158,17 +126,6 @@ module.exports = function (grunt) {
 		},
 
 		/**
-		 * Opens the web server in the browser
-		 * https://github.com/jsoverson/grunt-open
-		 */
-		open: {
-			server: {
-				path: 'http://localhost:<%= connect.options.port %>',
-				app: 'Firefox' // 'Firefox' or 'Google Chrome'
-			}
-		},
-
-		/**
 		 * Runs tasks against changed watched files
 		 * https://github.com/gruntjs/grunt-contrib-watch
 		 * Watching development files and run concat/compile tasks
@@ -185,11 +142,11 @@ module.exports = function (grunt) {
 			},
 			livereload: {
 				options: {
-					livereload: LIVERELOAD_PORT
+					livereload: 35729
 				},
 				files: [
 					'Gruntfile.js',
-					'<%= project.public %>/index.html',
+					'<%= project.public %>/index.*',
 					'<%= project.public %>/css/*.css',
 					'<%= project.public %>/js/{,*/}*.js',
 					'<%= project.public %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -206,8 +163,6 @@ module.exports = function (grunt) {
 		'sass:dev',
 		'jshint',
 		'concat:dev',
-		'connect:livereload',
-		'open',
 		'watch'
 	]);
 
@@ -220,7 +175,6 @@ module.exports = function (grunt) {
 		'sass:dev',
 		'jshint',
 		'concat:dev',
-		'connect:livereload',
 		'watch'
 	]);
 
