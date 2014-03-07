@@ -44,27 +44,13 @@ module.exports = function (grunt) {
 
 		project: {
 
-			// Styles
+			src: 'src',
+			public: 'public',
 			css: [
-				'base/css/libs/*.scss',
-				'base/css/*.scss',
-				'modules/*/*.scss',
-				'modules/*/skins/*.scss'
+				'<%= project.src %>/scss/import.scss'
 			],
-
-			// Scripts
 			js: [
-				'base/js/libs/*.js',
-				'base/js/*.js',
-				'modules/*/*.js',
-				'modules/*/skins/*.js',
-			],
-
-			// Scripts
-			jshint: [
-				'base/js/*.js',
-				'modules/*/*.js',
-				'modules/*/skins/*.js',
+				'<%= project.src %>/js/{,*/}*.js',
 			]
 		},
 
@@ -101,7 +87,7 @@ module.exports = function (grunt) {
 		 */
 
 		jshint: {
-			files: ['<%= project.jshint %>'],
+			files: ['src/js/*.js'],
 			options: {
 				jshintrc: '.jshintrc'
 			}
@@ -115,7 +101,7 @@ module.exports = function (grunt) {
 		concat: {
 			dev: {
 				files: {
-					'public/js/scripts.js': '<%= project.js %>'
+					'<%= project.public %>/js/scripts.min.js': '<%= project.js %>'
 				}
 			},
 			options: {
@@ -132,7 +118,7 @@ module.exports = function (grunt) {
 		 */
 		uglify: {
 			options: {
-				banner: "<%= banner %>"
+				banner: '<%= banner %>'
 			},
 			public: {
 				files: {
@@ -155,7 +141,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'public/css/style.css': '<%= project.css %>'
+					'<%= project.public %>/css/style.min.css': '<%= project.css %>'
 				}
 			},
 
@@ -167,7 +153,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'public/css/style.min.css': '<%= project.css %>'
+					'<%= project.public %>/css/style.min.css': '<%= project.css %>'
 				}
 			}
 		},
@@ -191,11 +177,11 @@ module.exports = function (grunt) {
 		 */
 		watch: {
 			concat: {
-				files: ['<%= project.js %>/{,*/}*.js'],
+				files: '<%= project.src %>/js/{,*/}*.js',
 				tasks: ['concat:dev', 'jshint']
 			},
 			sass: {
-				files: '<%= project.css %>/{,*/}*.{scss,sass}',
+				files: '<%= project.src %>/scss/{,*/}*.{scss,sass}',
 				tasks: ['sass:dev']
 			},
 			livereload: {
@@ -204,10 +190,10 @@ module.exports = function (grunt) {
 				},
 				files: [
 					'Gruntfile.js',
-					'public/{,*/}*.{html,html, phtml, php}',
-					'public/css/*.css',
-					'public/js/{,*/}*.js',
-					'public/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+					'<%= project.public %>/index.html',
+					'<%= project.public %>/css/*.css',
+					'<%= project.public %>/js/{,*/}*.js',
+					'<%= project.public %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 				]
 			}
 		}
@@ -227,26 +213,14 @@ module.exports = function (grunt) {
 	]);
 
 	/**
-	 * Default task
-	 * Run `grunt` on the command line
-	 */
-	grunt.registerTask('dev', [
-		'sass:dev',
-		'jshint',
-		'concat:dev',
-		'connect:livereload',
-		'watch'
-	]);
-
-	/**
 	 * Build task
 	 * Run `grunt build` on the command line
 	 * Then compress all JS/CSS files
 	 */
-	grunt.registerTask('build', [
+	grunt.registerTask('prod', [
 		'sass:prod',
 		'jshint',
-		'uglify'
+		'uglify',
 	]);
 
 };

@@ -15,47 +15,10 @@ $grid-fluid-gutter: percentage((100 / ($grid-fixed-width / $grid-fixed-gutter)) 
 $grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols;
 
 
-// Mixins
-
-@mixin row() {
-	@extend .cf;
-	margin-left: -$grid-fluid-gutter;
-	@include _debug('row', $grid-max-cols);
-}
-
-@mixin col($grid-max-cols: 12) {
-	margin-left: $grid-fluid-gutter;
-	float: left;
-	width: ($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols - 1));
-	@include _debug('col', $grid-max-cols);
-}
-
-@mixin push($grid-max-cols: 1) {
-	margin-left: ($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols + 1)) !important;
-	@include _debug('push', $grid-max-cols);
-}
-
-@mixin pull($grid-max-cols: 1) {
-	margin-left: ($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols - 1));
-	@include _debug('pull', $grid-max-cols);
-}
-
-
-// Classes
-
-.row {
-	@include row();
-}
-
-	.col {
-		@include col();
-	}
-
-
 // Debug
 
-//@mixin _debug($label: '', $cols: 12) {
-//
+@mixin _debug($label: '', $cols: 12) {
+
 //	@at-root .grid-debug#{&},
 //    .grid-debug & {
 //
@@ -100,6 +63,45 @@ $grid-one-col: (100% - ($grid-fluid-gutter * ($grid-max-cols))) / $grid-max-cols
 //			margin-bottom: 4px !important;
 //		}
 //	}
-//}
-//
+}
+
+
+
+
+// Mixins
+
+@mixin row() {
+	@extend .cf;
+	margin-left: -$grid-fluid-gutter;
+	@include _debug('row', $grid-max-cols);
+}
+
+@mixin col($grid-max-cols: 12) {
+	margin-left: $grid-fluid-gutter;
+	float: left;
+	width: ($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols - 1));
+	@include _debug('col', $grid-max-cols);
+}
+
+@mixin push($grid-max-cols: 1) {
+	margin-left: ($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols + 1)) !important;
+	@include _debug('push', $grid-max-cols);
+}
+
+@mixin pull($grid-max-cols: 1) {
+	margin-left: ($grid-one-col * $grid-max-cols) + ($grid-fluid-gutter * ($grid-max-cols - 1));
+	@include _debug('pull', $grid-max-cols);
+}
+
+
+// Classes
+
+.row {
+	@include row();
+}
+
+	.col {
+		@include col();
+	}
+
 

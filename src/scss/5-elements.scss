@@ -8,7 +8,6 @@
 }
 
 html{
-	color: $white;
     overflow-y:scroll;
     min-height:100%;
 }
@@ -35,7 +34,7 @@ pre {
     @extend .cf;
     padding: 0;
     margin-top: 0;
-	margin-bottom:($base-spacing / $base-font-size)*1rem;
+	margin-bottom:($spacing / $base-font-size)*1rem;
 }
 
 
@@ -45,7 +44,7 @@ pre {
  */
 
 hr {
-    margin-bottom:(($base-spacing - 2px) / $base-font-size)*1rem;
+    margin-bottom:(($spacing - 2px) / $base-font-size)*1rem;
 }
 
 
@@ -106,7 +105,7 @@ a {
 	&,
     &:active,
     &:focus{
-		color: $hilite;
+		color: $link;
         text-decoration:none;
     }
     &:hover {
@@ -130,7 +129,7 @@ img{
 
 input[type="checkbox"],
 input[type="radio"] {
-	margin-right: $half-spacing;
+	margin-right: $spacing / 2;
 }
 
 label[for] {
@@ -143,12 +142,12 @@ label[for] {
  */
 
 ::selection {
-	color: $dark;
-	background: $white; /* Safari */
+	color: $brand;
+	background: $copy; /* Safari */
 }
 ::-moz-selection {
-	color: $dark;
-	background: $white; /* Firefox */
+	color: $brand;
+	background: $copy; /* Firefox */
 }
 
 
