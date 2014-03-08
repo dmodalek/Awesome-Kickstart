@@ -1,10 +1,16 @@
 
 /**
- * Basic spacing
+ * Base stuff
  */
 
 $base-font-size:    14px!default;
 $base-line-height:  24px!default;
+
+
+/*
+ * Spacing Unit
+ */
+
 $spacing: 			$base-line-height!default;
 $line-height-ratio: $base-line-height / $base-font-size;
 
