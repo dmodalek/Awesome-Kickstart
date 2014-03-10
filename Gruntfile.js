@@ -34,11 +34,12 @@ module.exports = function (grunt) {
 
 			src: 'src',
 			public: 'public',
+			cache: '<%= project.public %>/cache',
 			css: [
-				'<%= project.src %>/scss/import.scss'
+				'<%= project.public %>/css/import.scss'
 			],
 			js: [
-				'<%= project.src %>/js/{,*/}*.js',
+				'<%= project.public %>/js/*.js'
 			]
 		},
 
@@ -54,7 +55,9 @@ module.exports = function (grunt) {
 		 */
 
 		jshint: {
-			files: ['src/js/*.js'],
+			files: [
+				'<%= project.js %>',
+			    'Gruntfile.js'],
 			options: {
 				jshintrc: '.jshintrc'
 			}
@@ -68,7 +71,7 @@ module.exports = function (grunt) {
 		concat: {
 			dev: {
 				files: {
-					'<%= project.public %>/js/scripts.min.js': '<%= project.js %>'
+					'<%= project.cache %>/scripts.min.js': '<%= project.js %>'
 				}
 			},
 			options: {
@@ -89,7 +92,7 @@ module.exports = function (grunt) {
 			},
 			public: {
 				files: {
-					'public/js/scripts.min.js': '<%= project.js %>'
+					'<%= project.cache %>/scripts.min.js': '<%= project.js %>'
 				}
 			}
 		},
@@ -108,7 +111,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'<%= project.public %>/css/style.min.css': '<%= project.css %>'
+					'<%= project.cache %>/styles.min.css': '<%= project.css %>'
 				}
 			},
 
@@ -120,7 +123,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'<%= project.public %>/css/style.min.css': '<%= project.css %>'
+					'<%= project.cache %>/styles.min.css': '<%= project.css %>'
 				}
 			}
 		},
@@ -130,8 +133,8 @@ module.exports = function (grunt) {
 				cascade: true
 			},
 			all: {
-				src: '<%= project.public %>/css/style.min.css',
-				dest: '<%= project.public %>/css/style.min.css'
+				src: '<%= project.cache %>/styles.min.css',
+				dest: '<%= project.cache %>/styles.min.css'
 			}
 		},
 
@@ -143,11 +146,11 @@ module.exports = function (grunt) {
 		 */
 		watch: {
 			concat: {
-				files: '<%= project.src %>/js/{,*/}*.js',
+				files: ['<%= project.public %>/js/{,*/}*.js'],
 				tasks: ['concat:dev', 'jshint']
 			},
 			sass: {
-				files: '<%= project.src %>/scss/{,*/}*.{scss,sass}',
+				files: '<%= project.public %>/css/{,*/}*.{scss,sass}',
 				tasks: ['sass:dev']
 			},
 			livereload: {
@@ -155,11 +158,10 @@ module.exports = function (grunt) {
 					livereload: 35729
 				},
 				files: [
-					'Gruntfile.js',
-					'<%= project.public %>/index.*',
-					'<%= project.public %>/css/*.css',
-					'<%= project.public %>/js/{,*/}*.js',
-					'<%= project.public %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+					'<%= project.public %>/*.{html,phtml,php}',
+					'<%= project.public %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+					'<%= project.cache %>/*.css',
+					'<%= project.cache %>/*.js'
 				]
 			}
 		}
@@ -172,7 +174,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', [
 		'sass:dev',
 		'autoprefixer',
-		'jshint',
+//		'jshint',
 		'concat:dev',
 		'watch'
 	]);

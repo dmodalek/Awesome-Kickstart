@@ -41,7 +41,7 @@ class Terrific {
 	protected $indent;
 	protected $skins = array();
 	protected $attribs = array();
-	protected $configs = array('tag' => 'div', 'fileext' => '.phtml');
+	protected $configs = array('tag' => 'div', 'fileext' => '.php');
 
 	/**
 	 * Constructor
@@ -263,6 +263,6 @@ class Terrific {
 			$template = '-'.$this->template;
 		}
 
-		return get_template_directory() . '/modules/' . $this->name . '/' . $this->name . $template . $this->configs['fileext'];
+		return 'modules/' . $this->name . '/' . $this->name . $template . $this->configs['fileext'];
 	}
 }

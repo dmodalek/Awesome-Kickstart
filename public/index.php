@@ -1,4 +1,6 @@
-<? include '/php/terrific.php'; ?>
+
+<? include 'includes/terrific.php'; ?>
+
 <!doctype html>
 <html class="no-js">
 <head>
@@ -11,7 +13,7 @@
 
 	<link href="//www.google-analytics.com" rel="dns-prefetch">
 	<link href="//ajax.googleapis.com" rel="dns-prefetch">
-	<link href="css/style.min.css" rel="stylesheet">
+	<link href="cache/styles.min.css" rel="stylesheet">
 
 	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
@@ -23,52 +25,40 @@
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
 </head>
+
 <body class="mod-layout">
-<header class="header" role="banner">
 
-	<div class="logo">
-		<a href="/">
-			<img src="img/example-logo.png" alt="Logo">
-		</a>
-	</div>
+	<header class="header" role="banner">
 
-	<nav class="nav" role="navigation">
-		<ul>
-			<li>
-				<a href="/"></a>
-			</li>
-		</ul>
-	</nav>
-</header>
-<main class="main" role="main">
+		<?php echo module('logo') ?>
 
-	<?php echo module('example-module') ?>
+	</header>
 
-</main>
+	<main class="main" role="main"></main>
 
-<aside class="sidebar" role="complementary"></aside>
+	<aside class="sidebar" role="complementary"></aside>
 
-<footer class="footer" role="contentinfo"></footer>
+	<footer class="footer" role="contentinfo"></footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>');</script>
-<script src="js/scripts.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>');</script>
+	<script src="cache/scripts.min.js"></script>
 
-<script>
-	(function (f, i, r, e, s, h, l) {®
-		i['GoogleAnalyticsObject'] = s;
-		f[s] = f[s] || function () {
-			(f[s].q = f[s].q || []).push(arguments)
-		}, f[s].l = 1 * new Date();
-		h = i.createElement(r),
-				l = i.getElementsByTagName(r)[0];
-		h.async = 1;
-		h.src = e;
-		l.parentNode.insertBefore(h, l)
-	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-	ga('create', 'UA-XXXXXXXX-XX');
-	ga('send', 'pageview');
-</script>
+	<script>
+		(function (f, i, r, e, s, h, l) {®
+			i['GoogleAnalyticsObject'] = s;
+			f[s] = f[s] || function () {
+				(f[s].q = f[s].q || []).push(arguments)
+			}, f[s].l = 1 * new Date();
+			h = i.createElement(r),
+					l = i.getElementsByTagName(r)[0];
+			h.async = 1;
+			h.src = e;
+			l.parentNode.insertBefore(h, l)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-XXXXXXXX-XX');
+		ga('send', 'pageview');
+	</script>
 
 </body>
 </html>
