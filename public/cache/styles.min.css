@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 10.03.2014 at 14:42:05
+ * Generated with Grunt on 10.03.2014 at 14:49:53
  */
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
@@ -129,8 +129,7 @@ dfn {
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0; }
 
 /**
@@ -292,9 +291,7 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -310,7 +307,7 @@ input[type="search"] {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
-          box-sizing: content-box; }
+  box-sizing: content-box; }
 
 /**
  * Remove inner padding and search cancel button in Safari 5 and Chrome
@@ -448,8 +445,7 @@ pre {
  */
 * {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 html {
   overflow-y: scroll;
@@ -572,9 +568,6 @@ label[for] {
 /*
  * Selected Text Styling
  */
-::-moz-selection {
-  color: #213249;
-  background: #a1daf7; }
 ::selection {
   color: #213249;
   background: #a1daf7; }
@@ -633,7 +626,7 @@ label[for] {
   .css-debug input[type=submit][value] {
     outline: none; }
 
-.mod-layout .logo {
+.mod-logo {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -644,4 +637,5 @@ label[for] {
 
 .skin-example-woot .text {
   color: blue; }
+
 /*# sourceMappingURL=styles.min.css.map */

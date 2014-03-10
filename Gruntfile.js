@@ -146,11 +146,14 @@ module.exports = function (grunt) {
 		 */
 		watch: {
 			concat: {
-				files: ['<%= project.public %>/js/{,*/}*.js'],
+				files: ['<%= project.public %>/js/{,*/}*.js',
+						'<%= project.public %>/modules/*/*.js'],
 				tasks: ['concat:dev', 'jshint']
 			},
 			sass: {
-				files: '<%= project.public %>/css/{,*/}*.{scss,sass}',
+				files: ['<%= project.public %>/css/{,*/}*.{scss,sass,css}',
+						'<%= project.public %>/modules/*/*.{scss,sass,css}'],
+
 				tasks: ['sass:dev']
 			},
 			livereload: {
