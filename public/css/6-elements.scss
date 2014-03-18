@@ -13,14 +13,14 @@ html{
 }
 
 body {
-	font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $font-families;
+	@extend .copy;
 	padding: 0;
   	margin: 0;
 }
 
 
 /*
- * Block Elements: Margin Bottom for vertical rythm
+ * Block Elements: Margin Bottom only, for vertical rythm
  */
 
 h1,h2,h3,h4,h5,h6,hgroup,
@@ -45,53 +45,6 @@ hr {
     margin-bottom:(($spacing - 2px) / $base-font-size)*1rem;
 }
 
-/*
- * Typography
- */
-
-h1, .alpha{
-	@include font-size($h1-size);
-	font-weight: normal;
-}
-h2, .beta{
-	@include font-size($h2-size);
-	font-weight: normal;
-}
-h3, .gamma{
-	@include font-size($h3-size);
-	font-weight: normal;
-}
-h4, .delta{
-	@include font-size($h4-size);
-	font-weight: normal;
-}
-h5, .epsilon{
-	@include font-size($h5-size);
-	font-weight: normal;
-}
-h6, .zeta{
-    @include font-size($h6-size);
-	font-weight: normal;
-}
-
-.giga {
-    @include font-size($giga-size);
-}
-.mega {
-    @include font-size($mega-size);
-}
-.kilo {
-    @include font-size($kilo-size);
-}
-
-.small {
-    @include font-size($small-size);
-}
-
-.micro{
-    @include font-size($micro-size);
-}
-
 
 /*
  * Links
@@ -114,7 +67,7 @@ a {
  * Images
  */
 
-img{
+img {
     height:auto;
 }
 
@@ -130,14 +83,4 @@ input[type="radio"] {
 
 label[for] {
 	cursor: pointer;
-}
-
-
-/*
- * Selected Text Styling
- */
-
-::selection {
-	color: $brand;
-	background: $copy;
 }
