@@ -1,4 +1,3 @@
-
 /**
  * Micro clearfix
  * - As per http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
@@ -7,13 +6,12 @@
 .cf {
 	clear: both;
 
-    &:after{
-        content:"";
-        display:table;
-        clear:both;
-    }
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
-
 
 /**
  * Image replacement
@@ -32,17 +30,15 @@
 	}
 }
 
-
 /*
  * Vertical align everything
  */
 
 .vertical-align {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
-
 
 /**
  * Make elements reponsive (eg. images), scale blocks in fluid layouts
@@ -56,33 +52,30 @@
 	-ms-interpolation-mode: bicubic;
 }
 
-
 /**
  * Break out of the parent div and expand full width
  */
 
 .break-out {
-	margin-left:  -100%;
+	margin-left: -100%;
 	margin-right: -100%;
 	padding-left: 100%;
 	padding-right: 100%;
 	overflow: hidden;
 }
 
-
 /**
  * truncate
  * - Truncate overly long text with ...
  */
 
-.truncate(@ellipsis-boundary: 100%){
-    max-width:@ellipsis-boundary;
-    white-space:nowrap;
-    overflow:hidden;
+.truncate(@ellipsis-boundary: 100%) {
+	max-width: @ellipsis-boundary;
+	white-space: nowrap;
+	overflow: hidden;
 	display: inline-block;
-    text-overflow:ellipsis;
+	text-overflow: ellipsis;
 }
-
 
 /**
  * Font size with line-height

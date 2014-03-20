@@ -1,4 +1,3 @@
-
 /**
  * Awesome Grid
  */
@@ -9,12 +8,10 @@
 @grid-fixed-gutter: 100px;
 @grid-max-cols: 12;
 
-
 // Calculations
 
 @grid-fluid-gutter: percentage((100 / (@grid-fixed-width / @grid-fixed-gutter)) / 100);
 @grid-one-col: (100% - (@grid-fluid-gutter * (@grid-max-cols))) / @grid-max-cols;
-
 
 // Debug
 
@@ -66,34 +63,30 @@
 //	}
 //}
 
-
-
-
 // Mixins
 
 .row() {
 	.cf();
 	margin: 0 -@grid-fluid-gutter/2;
-//	include _debug('row', @grid-max-cols);
+	//	include _debug('row', @grid-max-cols);
 }
 
 .col(@grid-max-cols: 12) {
 	margin: 0 @grid-fluid-gutter/2;
 	float: left;
 	width: (@grid-one-col * @grid-max-cols) + (@grid-fluid-gutter * (@grid-max-cols - 1));
-//	include _debug('col', @grid-max-cols);
+	//	include _debug('col', @grid-max-cols);
 }
 
 .push(@grid-max-cols: 1) {
 	margin-left: (@grid-one-col * @grid-max-cols) + (@grid-fluid-gutter * (@grid-max-cols + 1)) !important;
-//	include _debug('push', @grid-max-cols);
+	//	include _debug('push', @grid-max-cols);
 }
 
 .pull(@grid-max-cols: 1) {
 	margin-left: (@grid-one-col * @grid-max-cols) + (@grid-fluid-gutter * (@grid-max-cols - 1));
-//	include _debug('pull', @grid-max-cols);
+	//	include _debug('pull', @grid-max-cols);
 }
-
 
 // Classes
 
@@ -101,8 +94,8 @@
 	.row();
 }
 
-	.col {
-		.col();
-	}
+.col {
+	.col();
+}
 
 
