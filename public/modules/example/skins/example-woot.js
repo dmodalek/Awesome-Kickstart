@@ -11,7 +11,7 @@
 
 			// call parent constructor
 			parent.on(callback);
-		},
+		};
 
 		this.after = function () {
 

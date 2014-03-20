@@ -1,11 +1,10 @@
-
-<? include 'includes/terrific.php'; ?>
+<? include 'php/terrific.php'; ?>
 
 <!doctype html>
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	<title>Awesome Frontend Boilerplate</title>
+	<title>Awesome Kickstart</title>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="">

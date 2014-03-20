@@ -1,23 +1,11 @@
-/*!
- * Awesome Frontend Boilerplate
- * https://github.com/dmodalek/awesome-frontend-boilerplate
- */
-
 'use strict';
 
-/**
- * Grunt module
- */
 module.exports = function (grunt) {
 
-	/**
-	 * Dynamically load npm tasks
-	 */
+	// Dynamically load npm tasks
+
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-	/**
-	 * FireShell Grunt config
-	 */
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
@@ -26,82 +14,81 @@ module.exports = function (grunt) {
 
 		banner: '\n/*\n * Generated with Grunt on <%= grunt.template.today("dd.mm.yyyy") %> at <%= grunt.template.today("H:MM:ss") %>\n */\n',
 
-		////////////////////////////////////////////////////////////////////////////////
+
+		///////////////////////////////////////////////////////////
 
 		// Directories
 
 		project: {
 
-			src: 'src',
-			public: 'public',
-			cache: '<%= project.public %>/cache',
-			css: [
-				'<%= project.public %>/css/import.scss'
+			// Scripts
+
+			scripts: [
+				'public/js/*.js',
+				'public/modules/*/*.js',
+				'public/modules/*/skins/*.js',
 			],
-			js: [
-				'<%= project.public %>/js/*.js'
-			]
+
+			scriptsLint: [
+				'public/modules/*/*.js',
+				'public/modules/*/skins/*.js',
+			],
+
+			// Styles
+
+			styles: [
+				'public/css/*.scss',
+				'public/modules/*/*.scss',
+				'public/modules/*/skins/*.scss',
+			],
+
+			sass: [
+				'public/css/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
+			],
+
+			// Markup
+
+			markup: [
+				'public/*.php',
+				'public/modules/*/*.phtml',
+			],
+
+			// Cache
+
+			cache: 'public/cache'
 		},
 
 
-		////////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////
 
-		// Tasks
-
-		/**
-		 * JSHint
-		 * https://github.com/gruntjs/grunt-contrib-jshint
-		 * Manage the options inside .jshintrc file
-		 */
+		// Scripts
 
 		jshint: {
-			files: [
-				'<%= project.js %>',
-			    'Gruntfile.js'],
-			options: {
-				jshintrc: '.jshintrc'
-			}
+			files: '<%=project.scriptsLint%>'
 		},
 
-		/**
-		 * Concatenate JavaScript files
-		 * https://github.com/gruntjs/grunt-contrib-concat
-		 * Imports all .js files and publicends project banner
-		 */
-		concat: {
-			dev: {
-				files: {
-					'<%= project.cache %>/scripts.min.js': '<%= project.js %>'
-				}
-			},
-			options: {
-				stripBanners: true,
-				nonull: true,
-				banner: '<%= banner %>'
-			}
-		},
-
-		/**
-		 * Uglify (minify) JavaScript files
-		 * https://github.com/gruntjs/grunt-contrib-uglify
-		 * Compresses and minifies all JavaScript files into one
-		 */
 		uglify: {
-			options: {
-				banner: '<%= banner %>'
-			},
-			public: {
+
+			dev: {
+				options: {
+					banner: '<%= banner %>',
+					beautify: true,
+					sourceMap: '<%=project.cache%>/scripts.map.js',
+					sourceMapRoot: '../',
+					sourceMappingURL: 'scripts.map.js'
+				},
+
 				files: {
-					'<%= project.cache %>/scripts.min.js': '<%= project.js %>'
+					'<%=project.cache%>/scripts.js': ['<%=project.scripts%>']
 				}
 			}
 		},
 
-		/**
-		 * Compile Sass/SCSS files
-		 * https://github.com/gruntjs/grunt-contrib-sass
-		 * Compiles all Sass/SCSS files and publicends project banner
-		 */
+
+		///////////////////////////////////////////////////////////
+
+		// Styles
+
 		sass: {
 			dev: {
 				options: {
@@ -111,11 +98,11 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'<%= project.cache %>/styles.min.css': '<%= project.css %>'
+					'<%= project.cache %>/styles.css': '<%= project.sass %>'
 				}
 			},
 
-			prod: {
+			min: {
 				options: {
 					banner: '<%= banner %>',
 					style: 'compressed',
@@ -123,7 +110,7 @@ module.exports = function (grunt) {
 					require: 'sass-globbing'
 				},
 				files: {
-					'<%= project.cache %>/styles.min.css': '<%= project.css %>'
+					'<%= project.cache %>/styles.css': '<%= project.sass %>'
 				}
 			}
 		},
@@ -133,78 +120,57 @@ module.exports = function (grunt) {
 				cascade: true
 			},
 			all: {
-				src: '<%= project.cache %>/styles.min.css',
-				dest: '<%= project.cache %>/styles.min.css'
+				src: '<%= project.cache %>/styles.css',
+				dest: '<%= project.cache %>/styles.css'
 			}
 		},
 
-		/**
-		 * Runs tasks against changed watched files
-		 * https://github.com/gruntjs/grunt-contrib-watch
-		 * Watching development files and run concat/compile tasks
-		 * Livereload the browser once complete
-		 */
-		watch: {
-			concat: {
-				files: ['<%= project.public %>/js/{,*/}*.js',
-						'<%= project.public %>/modules/*/*.js'],
-				tasks: ['concat:dev', 'jshint']
-			},
-			sass: {
-				files: ['<%= project.public %>/css/{,*/}*.{scss,sass,css}',
-						'<%= project.public %>/modules/*/*.{scss,sass,css}'],
 
-				tasks: ['sass:dev']
+		///////////////////////////////////////////////////////////
+
+		// Watch
+
+		watch: {
+			scripts: {
+				files: ['Gruntfile.js', '<%= project.scripts'],
+				tasks: ['jshint', 'uglify']
 			},
-			livereload: {
-				options: {
-					livereload: 35729
-				},
-				files: [
-					'<%= project.public %>/*.{html,phtml,php}',
-					'<%= project.public %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-					'<%= project.cache %>/*.css',
-					'<%= project.cache %>/*.js'
-				]
+			styles: {
+				files: '<%= project.styles %>',
+				tasks: ['sass:dev', 'autoprefixer']
 			}
+//			livereload: {
+//				options: {
+//					livereload: 35729
+//				},
+//				files: [
+//					'Gruntfile.js',
+//					'<%= project.scripts %>',
+//					'<%= project.styles %>',
+//					'<%= project.markup %>',
+//				]
+//			}
 		}
 	});
 
-	/**
-	 * Default task
-	 * Run `grunt` on the command line
-	 */
+
+	///////////////////////////////////////////////////////////
+	
+	// Default Tasl
 	grunt.registerTask('default', [
-		'sass:dev',
-		'autoprefixer',
-//		'jshint',
-		'concat:dev',
-		'watch'
-	]);
-
-
-	/**
-	 * Dev task without opening
-	 * Run `grunt` on the command line
-	 */
-	grunt.registerTask('dev', [
-		'sass:dev',
-		'autoprefixer',
-		'jshint',
-		'concat:dev',
-		'watch'
-	]);
-
-	/**
-	 * Build task
-	 * Run `grunt build` on the command line
-	 * Then compress all JS/CSS files
-	 */
-	grunt.registerTask('prod', [
-		'sass:prod',
-		'autoprefixer',
 		'jshint',
 		'uglify',
+		'sass:dev',
+		'autoprefixer',
+		'watch'
+	]);
+
+
+	// Minification
+	
+	grunt.registerTask('min', [
+		'default',
+		'sass:min'
 	]);
 
 };
