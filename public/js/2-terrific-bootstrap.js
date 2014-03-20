@@ -13,5 +13,6 @@
 		application.registerModules($html);
 		application.registerModule($html, 'Layout');
 		application.start();
+		console.log('Terrific JS started');
 	});
 })(Tc.$);

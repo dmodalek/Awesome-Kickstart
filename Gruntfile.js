@@ -61,6 +61,54 @@ module.exports = function (grunt) {
 
 		///////////////////////////////////////////////////////////
 
+		// Styles
+
+		sass: {
+			all: {
+				options: {
+					banner: '<%= banner %>',
+					style: 'nested',
+					sourcemap: true,
+					require: 'sass-globbing'
+				},
+				files: {
+					'<%= project.cache %>/styles.css': '<%= project.sass %>'
+				}
+			}
+		},
+
+		/**
+		 * https://github.com/nDmitry/grunt-autoprefixer
+		 */
+		autoprefixer: {
+			options: {
+				cascade: true
+			},
+			all: {
+				src: '<%= project.cache %>/styles.css',
+				dest: '<%= project.cache %>/styles.css'
+			}
+		},
+
+		/**
+		 * CSSMin
+		 * CSS minification
+		 * https://github.com/gruntjs/grunt-contrib-cssmin
+		 */
+		cssmin: {
+			min: {
+				options: {
+					banner: '<%= banner %>'
+				},
+				files: {
+					'<%= project.cache %>/styles.css': '<%= project.cache %>/styles.css'
+				}
+			}
+		},
+
+
+		///////////////////////////////////////////////////////////
+
 		// Scripts
 
 		jshint: {
@@ -81,49 +129,22 @@ module.exports = function (grunt) {
 				files: {
 					'<%=project.cache%>/scripts.js': ['<%=project.scripts%>']
 				}
-			}
-		},
-
-
-		///////////////////////////////////////////////////////////
-
-		// Styles
-
-		sass: {
-			dev: {
-				options: {
-					banner: '<%= banner %>',
-					style: 'nested',
-					sourcemap: true,
-					require: 'sass-globbing'
-				},
-				files: {
-					'<%= project.cache %>/styles.css': '<%= project.sass %>'
-				}
 			},
 
 			min: {
 				options: {
 					banner: '<%= banner %>',
-					style: 'compressed',
-					sourcemap: true,
-					require: 'sass-globbing'
+					sourceMap: '<%=project.cache%>/scripts.map.js',
+					sourceMapRoot: '../',
+					sourceMappingURL: 'scripts.map.js'
 				},
+
 				files: {
-					'<%= project.cache %>/styles.css': '<%= project.sass %>'
+					'<%=project.cache%>/scripts.js': ['<%=project.scripts%>']
 				}
 			}
 		},
 
-		autoprefixer: {
-			options: {
-				cascade: true
-			},
-			all: {
-				src: '<%= project.cache %>/styles.css',
-				dest: '<%= project.cache %>/styles.css'
-			}
-		},
 
 
 		///////////////////////////////////////////////////////////
@@ -137,7 +158,7 @@ module.exports = function (grunt) {
 			},
 			styles: {
 				files: '<%= project.styles %>',
-				tasks: ['sass:dev', 'autoprefixer']
+				tasks: ['sass']
 			},
 			livereload: {
 				options: {
@@ -158,10 +179,10 @@ module.exports = function (grunt) {
 	
 	// Default Tasl
 	grunt.registerTask('default', [
+		'sass',
+//		'autoprefixer',
 		'jshint',
-		'uglify',
-		'sass:dev',
-		'autoprefixer',
+		'uglify:dev',
 		'watch'
 	]);
 
@@ -169,8 +190,11 @@ module.exports = function (grunt) {
 	// Minification
 	
 	grunt.registerTask('min', [
-		'default',
-		'sass:min'
+		'sass',
+//		'autoprefixer',
+//		'cssmin',
+		'jshint',
+		'uglify:min'
 	]);
 
 };

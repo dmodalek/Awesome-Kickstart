@@ -2,12 +2,18 @@
 
 A Kickstart for your next PHP Project using Terrific, SCSS and Grunt.
 
-* Source: [github.com/dmodalek/awesome-frontend-kickstart](http://github.com/dmodalek/awesome-frontend-kickstart)
+* Source: [github.com/dmodalek/awesome-frontend-kickstart](http://github.com/dmodalek/awesome-kickstart)
 
 
 ## Features
 
-Here are some of the main features of Awesome Kickstart:
+Here are some of the main features:
+
+
+* Live Reloading with Code Injecting for CSS, JS and HTML
+* Sourcemaps for CSS and JS
+* Debug Helper for your Grid System
+* NOT YET Automatic CSS Vendor prefixes
 
 * HTML5 framework, WAI-ARIA roles and HTML5 semantics
 * Baseline HTML5 features, DNS prefetching, responsive meta
