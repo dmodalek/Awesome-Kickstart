@@ -41,13 +41,9 @@ module.exports = function (grunt) {
 			// Styles
 
 			styles: [
-				'public/css/*.scss',
-				'public/modules/*/*.scss',
-				'public/modules/*/skins/*.scss'
-			],
-
-			sass: [
-				'public/css/import.scss' // Sass wants us to import all the .scss files instead of globbing them via Grunt
+				'public/css/*.less',
+				'public/modules/*/*.less',
+				'public/modules/*/skins/*.less'
 			],
 
 			// Markup
@@ -63,17 +59,24 @@ module.exports = function (grunt) {
 
 		// Styles
 
-		sass: {
+		less_imports: {
 			all: {
-				options: {
-					banner: '<%= banner %>',
-					style: 'nested',
-					sourcemap: true,
-					require: 'sass-globbing'
-				},
-				files: {
-					'<%= project.cache %>/styles.css': '<%= project.sass %>'
-				}
+				src : '<%= project.styles %>',
+				dest : '<%= project.cache %>/less-imports.less'
+			}
+		},
+
+		less: {
+			options: {
+				sourceMap: true,
+				sourceMapFilename: '<%= project.cache %>/styles.css.map',
+				sourceMapRootpath: '../',
+				sourceMapBasepath: 'public'
+			}
+
+			,all: {
+				src : '<%= project.cache %>/less-imports.less',
+				dest : '<%= project.cache %>/styles.css'
 			}
 		},
 
@@ -158,7 +161,7 @@ module.exports = function (grunt) {
 			},
 			styles: {
 				files: '<%= project.styles %>',
-				tasks: ['sass']
+				tasks: ['less_imports', 'less']
 			},
 			livereload: {
 				options: {
@@ -179,8 +182,9 @@ module.exports = function (grunt) {
 	
 	// Default Tasl
 	grunt.registerTask('default', [
-		'sass',
-//		'autoprefixer',
+		'less_imports',
+		'less',
+		'autoprefixer',
 		'jshint',
 		'uglify:dev',
 		'watch'
@@ -190,9 +194,10 @@ module.exports = function (grunt) {
 	// Minification
 	
 	grunt.registerTask('min', [
-		'sass',
-//		'autoprefixer',
-//		'cssmin',
+		'less_imports',
+		'less',
+		'autoprefixer',
+		'cssmin',
 		'jshint',
 		'uglify:min'
 	]);

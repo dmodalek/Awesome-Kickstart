@@ -1,0 +1,70 @@
+
+/*
+ * Typography
+ */
+
+h1, .alpha {
+	.font-size(@h1-size);
+	font-weight: normal;
+}
+h2, .beta {
+	.font-size(@h2-size);
+	font-weight: normal;
+}
+h3, .gamma {
+	.font-size(@h3-size);
+	font-weight: normal;
+}
+h4, .delta {
+	.font-size(@h4-size);
+	font-weight: normal;
+}
+h5, .epsilon {
+	.font-size(@h5-size);
+	font-weight: normal;
+}
+h6, .zeta {
+    .font-size(@h6-size);
+	font-weight: normal;
+}
+
+.giga {
+    .font-size(@giga-size);
+}
+.mega {
+    .font-size(@mega-size);
+}
+.kilo {
+    .font-size(@kilo-size);
+}
+
+.copy {
+	.font-size(@base-font-size);
+}
+
+.small {
+    .font-size(@small-size);
+}
+
+.micro {
+    .font-size(@micro-size);
+}
+
+
+/*
+ * Small
+ */
+
+small {
+	.small();
+}
+
+
+/*
+ * Selected Text Styling
+ */
+
+::selection {
+	color: @color-brand;
+	background: @color-copy;
+}

@@ -4,7 +4,7 @@
  * - As per http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
  */
 
-%cf {
+.cf {
 	clear: both;
 
     &:after{
@@ -19,7 +19,7 @@
  * Image replacement
  */
 
-%ir {
+.ir {
 	background-color: transparent;
 	border: 0;
 	overflow: hidden;
@@ -37,11 +37,9 @@
  * Vertical align everything
  */
 
-%vertical-align {
+.vertical-align {
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -50,7 +48,7 @@
  * Make elements reponsive (eg. images), scale blocks in fluid layouts
  */
 
-%flex {
+.flex {
 	max-width: 100%;
 	width: auto; //fix for ie
 	height: auto;
@@ -63,7 +61,7 @@
  * Break out of the parent div and expand full width
  */
 
-%break-out {
+.break-out {
 	margin-left:  -100%;
 	margin-right: -100%;
 	padding-left: 100%;
@@ -77,8 +75,8 @@
  * - Truncate overly long text with ...
  */
 
-@mixin truncate($ellipsis-boundary: 100%){
-    max-width:$ellipsis-boundary;
+.truncate(@ellipsis-boundary: 100%){
+    max-width:@ellipsis-boundary;
     white-space:nowrap;
     overflow:hidden;
 	display: inline-block;
@@ -91,8 +89,8 @@
  * - Create font-sizes with appropriate line heights
  */
 
-@mixin font-size($font-size: $base-font-size){
-    font-size:$font-size;
-    font-size:($font-size / $base-font-size)*1rem;
-    line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+.font-size(@font-size: @base-font-size){
+    font-size:@font-size;
+    font-size:(@font-size / @base-font-size)*1rem;
+    line-height:ceil(@font-size / @base-line-height) * (@base-line-height / @font-size);
 }
