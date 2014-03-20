@@ -10,11 +10,8 @@
 	$(document).ready(function () {
 		var $html = $('html');
 		window.application = new Tc.Application($html);
-		application.config = {
-			themeDir: '<?= get_template_directory_uri() ?>'
-		};
-
 		application.registerModules($html);
+		application.registerModule($html, 'Layout');
 		application.start();
 	});
 })(Tc.$);

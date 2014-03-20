@@ -12,12 +12,12 @@
 
 	<link href="//www.google-analytics.com" rel="dns-prefetch">
 	<link href="//ajax.googleapis.com" rel="dns-prefetch">
-	<link href="cache/styles.min.css" rel="stylesheet">
+	<link href="cache/styles.css" rel="stylesheet">
 
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="js/dyn/modernizr-2.6.2.min.js"></script>
 
 	<!--[if lt IE 9]>
-	<script src="/js/vendor/html5shiv-printshiv-3.7.1.js" type="text/javascript"></script>
+	<script src="/js/dyn/html5shiv-printshiv-3.7.1.js" type="text/javascript"></script>
 	<![endif]-->
 
 	<!-- Live Reload !-->
@@ -40,11 +40,11 @@
 	<footer class="footer" role="contentinfo"></footer>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>');</script>
-	<script src="cache/scripts.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/dyn/jquery-1.11.0.min.js"><\/script>');</script>
+	<script src="cache/scripts.js"></script>
 
 	<script>
-		(function (f, i, r, e, s, h, l) {®
+		(function (f, i, r, e, s, h, l) {
 			i['GoogleAnalyticsObject'] = s;
 			f[s] = f[s] || function () {
 				(f[s].q = f[s].q || []).push(arguments)

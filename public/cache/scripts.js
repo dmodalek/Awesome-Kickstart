@@ -1,16 +1,7 @@
 
 /*
- * Generated with Grunt on 20.03.2014 at 14:46:10
+ * Generated with Grunt on 20.03.2014 at 15:55:28
  */
-
-!function(a) {
-    a(document).ready(function() {
-        var b = a("html");
-        window.application = new Tc.Application(b), application.config = {
-            themeDir: "<?= get_template_directory_uri() ?>"
-        }, application.registerModules(b), application.start();
-    });
-}(Tc.$);
 
 var Tc = Tc || {};
 
@@ -243,9 +234,26 @@ Tc.$ = $, function() {
             });
         }
     };
+}(Tc.$), function(a) {
+    a(document).ready(function() {
+        var b = a("html");
+        window.application = new Tc.Application(b), application.registerModules(b), application.registerModule(b, "Layout"), 
+        application.start();
+    });
 }(Tc.$), function() {
     "use strict";
     Tc.Module.Example = Tc.Module.extend({
+        init: function(a, b, c) {
+            this._super(a, b, c);
+        },
+        on: function(a) {
+            a();
+        },
+        after: function() {}
+    });
+}(Tc.$), function() {
+    "use strict";
+    Tc.Module.Layout = Tc.Module.extend({
         init: function(a, b, c) {
             this._super(a, b, c);
         },

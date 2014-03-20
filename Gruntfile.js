@@ -21,17 +21,21 @@ module.exports = function (grunt) {
 
 		project: {
 
+			// Cache
+
+			cache: 'public/cache',
+
 			// Scripts
 
 			scripts: [
 				'public/js/*.js',
 				'public/modules/*/*.js',
-				'public/modules/*/skins/*.js',
+				'public/modules/*/skins/*.js'
 			],
 
 			scriptsLint: [
 				'public/modules/*/*.js',
-				'public/modules/*/skins/*.js',
+				'public/modules/*/skins/*.js'
 			],
 
 			// Styles
@@ -39,7 +43,7 @@ module.exports = function (grunt) {
 			styles: [
 				'public/css/*.scss',
 				'public/modules/*/*.scss',
-				'public/modules/*/skins/*.scss',
+				'public/modules/*/skins/*.scss'
 			],
 
 			sass: [
@@ -50,12 +54,8 @@ module.exports = function (grunt) {
 
 			markup: [
 				'public/*.php',
-				'public/modules/*/*.phtml',
-			],
-
-			// Cache
-
-			cache: 'public/cache'
+				'public/modules/*/*.phtml'
+			]
 		},
 
 
@@ -132,24 +132,24 @@ module.exports = function (grunt) {
 
 		watch: {
 			scripts: {
-				files: ['Gruntfile.js', '<%= project.scripts'],
+				files: ['Gruntfile.js', '<%= project.scripts %>'],
 				tasks: ['jshint', 'uglify']
 			},
 			styles: {
 				files: '<%= project.styles %>',
 				tasks: ['sass:dev', 'autoprefixer']
+			},
+			livereload: {
+				options: {
+					livereload: 35729
+				},
+				files: [
+					'Gruntfile.js',
+					'<%= project.scripts %>',
+					'<%= project.styles %>',
+					'<%= project.markup %>',
+				]
 			}
-//			livereload: {
-//				options: {
-//					livereload: 35729
-//				},
-//				files: [
-//					'Gruntfile.js',
-//					'<%= project.scripts %>',
-//					'<%= project.styles %>',
-//					'<%= project.markup %>',
-//				]
-//			}
 		}
 	});
 
