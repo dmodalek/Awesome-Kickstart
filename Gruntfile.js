@@ -50,7 +50,7 @@ module.exports = function (grunt) {
 
 			markup: [
 				'public/*.php',
-				'public/modules/*/*.phtml'
+				'public/modules/*/*.php'
 			]
 		},
 
