@@ -83,9 +83,16 @@
  */
 
 .font-size(@font-size: @base-font-size) {
-	font-size: @font-size;
-	font-size: ~"@{font-size/base-font-size}rem";
 
-	line-height: @base-line-height;
-	line-height: "@{ceil(@font-size / @base-line-height) * (@base-line-height / @font-size)}rem";
+	@line-height-ratio: @base-line-height / @base-font-size;
+
+	font-size: @font-size * 1px;
+	line-height: @font-size * @line-height-ratio * 1px;
+
+
+	@font-size-for-rem: (@font-size / 10);
+	@line-height-for-rem: (@font-size * @line-height-ratio / 10);
+
+	font-size: ~"@{font-size-for-rem}rem";
+	line-height: ~"@{line-height-for-rem}rem";
 }

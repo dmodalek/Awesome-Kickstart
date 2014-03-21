@@ -431,111 +431,518 @@ font-face {
  */
 .row {
   clear: both;
-  margin: 0 -4.38596491%;
+  margin-left: -0.87719298%;
+  margin-right: -0.87719298%;
 }
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-.col {
-  margin: 0 4.38596491%;
+.debug .row:before,
+.debug .row:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .row:before {
+  content: 'row-12' !important;
+}
+.debug .row:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .row:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .row:before,
+.debug .row:after {
+  background-color: rgba(128, 128, 128, 0.4);
+}
+.col-12 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
   float: left;
-  width: 91.22807018%;
+  width: 98.24561404%;
+  width: 12;
+}
+.debug .col-12:before,
+.debug .col-12:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-12:before {
+  content: 'col-12' !important;
+}
+.debug .col-12:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-12:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-12:before,
+.debug .col-12:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-11 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 89.9122807%;
+  width: 11;
+}
+.debug .col-11:before,
+.debug .col-11:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-11:before {
+  content: 'col-11' !important;
+}
+.debug .col-11:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-11:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-11:before,
+.debug .col-11:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-10 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 81.57894737%;
+  width: 10;
+}
+.debug .col-10:before,
+.debug .col-10:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-10:before {
+  content: 'col-10' !important;
+}
+.debug .col-10:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-10:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-10:before,
+.debug .col-10:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-9 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 73.24561404%;
+  width: 9;
+}
+.debug .col-9:before,
+.debug .col-9:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-9:before {
+  content: 'col-9' !important;
+}
+.debug .col-9:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-9:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-9:before,
+.debug .col-9:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-8 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 64.9122807%;
+  width: 8;
+}
+.debug .col-8:before,
+.debug .col-8:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-8:before {
+  content: 'col-8' !important;
+}
+.debug .col-8:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-8:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-8:before,
+.debug .col-8:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-7 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 56.57894737%;
+  width: 7;
+}
+.debug .col-7:before,
+.debug .col-7:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-7:before {
+  content: 'col-7' !important;
+}
+.debug .col-7:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-7:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-7:before,
+.debug .col-7:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-6 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 48.24561404%;
+  width: 6;
+}
+.debug .col-6:before,
+.debug .col-6:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-6:before {
+  content: 'col-6' !important;
+}
+.debug .col-6:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-6:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-6:before,
+.debug .col-6:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-5 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 39.9122807%;
+  width: 5;
+}
+.debug .col-5:before,
+.debug .col-5:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-5:before {
+  content: 'col-5' !important;
+}
+.debug .col-5:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-5:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-5:before,
+.debug .col-5:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-4 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 31.57894737%;
+  width: 4;
+}
+.debug .col-4:before,
+.debug .col-4:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-4:before {
+  content: 'col-4' !important;
+}
+.debug .col-4:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-4:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-4:before,
+.debug .col-4:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-3 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 23.24561404%;
+  width: 3;
+}
+.debug .col-3:before,
+.debug .col-3:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-3:before {
+  content: 'col-3' !important;
+}
+.debug .col-3:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-3:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-3:before,
+.debug .col-3:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-2 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 14.9122807%;
+  width: 2;
+}
+.debug .col-2:before,
+.debug .col-2:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-2:before {
+  content: 'col-2' !important;
+}
+.debug .col-2:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-2:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-2:before,
+.debug .col-2:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.col-1 {
+  margin-left: 0.87719298%;
+  margin-right: 0.87719298%;
+  float: left;
+  width: 6.57894737%;
+  width: 1;
+}
+.debug .col-1:before,
+.debug .col-1:after {
+  display: block !important;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.debug .col-1:before {
+  content: 'col-1' !important;
+}
+.debug .col-1:after {
+  clear: both;
+  content: "-";
+  color: transparent;
+}
+.debug .col-1:after:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.debug .col-1:before,
+.debug .col-1:after {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.2);
 }
 /*
  * Typography
  */
 h1,
-.alpha {
+.h1 {
   font-size: 32px;
-  font-size: 2.28571429rem;
-  line-height: 1.5px;
+  line-height: 54.85714286px;
+  font-size: 3.2pxrem;
+  line-height: 5.485714285714286pxrem;
   font-weight: normal;
 }
 h2,
-.beta {
+.h2 {
   font-size: 26px;
-  font-size: 1.85714286rem;
-  line-height: 1.84615385px;
+  line-height: 44.57142857px;
+  font-size: 2.6pxrem;
+  line-height: 4.457142857142857pxrem;
   font-weight: normal;
 }
 h3,
-.gamma {
-  font-size: 18px;
-  font-size: 1.28571429rem;
-  line-height: 1.33333333px;
+.h3 {
+  font-size: 20px;
+  line-height: 34.28571429px;
+  font-size: 2pxrem;
+  line-height: 3.4285714285714284pxrem;
   font-weight: normal;
 }
 h4,
-.delta {
-  font-size: 20px;
-  font-size: 1.42857143rem;
-  line-height: 1.2px;
-  font-weight: normal;
-}
-h5,
-.epsilon {
-  font-size: 16px;
-  font-size: 1.14285714rem;
-  line-height: 1.5px;
-  font-weight: normal;
-}
-h6,
-.zeta {
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 1.71428571px;
+.h4 {
+  font-size: 18px;
+  line-height: 30.85714286px;
+  font-size: 1.8pxrem;
+  line-height: 3.0857142857142854pxrem;
   font-weight: normal;
 }
 .giga {
   font-size: 96px;
-  font-size: 6.85714286rem;
-  line-height: 1px;
+  line-height: 164.57142857px;
+  font-size: 9.6pxrem;
+  line-height: 16.457142857142856pxrem;
 }
 .mega {
   font-size: 72px;
-  font-size: 5.14285714rem;
-  line-height: 1px;
+  line-height: 123.42857143px;
+  font-size: 7.2pxrem;
+  line-height: 12.342857142857142pxrem;
 }
 .kilo {
   font-size: 48px;
-  font-size: 3.42857143rem;
-  line-height: 1px;
-}
-.copy {
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 1.71428571px;
+  line-height: 82.28571429px;
+  font-size: 4.8pxrem;
+  line-height: 8.228571428571428pxrem;
 }
 .small {
   font-size: 12px;
-  font-size: 0.85714286rem;
-  line-height: 2px;
+  line-height: 20.57142857px;
+  font-size: 1.2pxrem;
+  line-height: 2.057142857142857pxrem;
 }
 .micro {
   font-size: 10px;
-  font-size: 0.71428571rem;
-  line-height: 2.4px;
+  line-height: 17.14285714px;
+  font-size: 1pxrem;
+  line-height: 1.7142857142857142pxrem;
 }
 /*
  * Small
  */
 small {
   font-size: 12px;
-  font-size: 0.85714286rem;
-  line-height: 2px;
+  line-height: 20.57142857px;
+  font-size: 1.2pxrem;
+  line-height: 2.057142857142857pxrem;
 }
 /*
  * Selected Text Styling
  */
 ::-moz-selection {
   color: #f08921;
-  background: #333333;
+  background: #666666;
 }
 ::selection {
   color: #f08921;
-  background: #333333;
+  background: #666666;
 }
 /**
  * Global Elements
@@ -548,13 +955,18 @@ small {
 html {
   overflow-y: scroll;
   min-height: 100%;
+  font-size: 62.5%;
 }
 body {
   font-size: 14px;
-  font-size: 1rem;
-  line-height: 1.71428571px;
+  line-height: 24px;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-family: 'Open Sans', sans-serif;
   padding: 0;
   margin: 0;
+  overflow: hidden;
+  color: #666666;
 }
 /*
  * Block Elements: Margin Bottom only, for vertical rythm
@@ -642,8 +1054,17 @@ label[for] {
  */
 .richtext {
   /*
+	 * Headings
+ 	 */
+  /*
 	 * Lists
 	 */
+}
+.richtext h1,
+.richtext h2,
+.richtext h3,
+.richtext h4 {
+  color: #f08921;
 }
 .richtext ul,
 .richtext ol,
@@ -671,71 +1092,98 @@ label[for] {
 .icon-arrow-down:before {
   content: "\e600";
 }
-/**
- * Debug
- *
- * Enable this stylesheet to visually detect any improperly nested or
- * potentially invalid markup, or any potentially inaccessible code.
-*/
-.css-debug {
-  /**
-	 * Images require `alt` attributes, empty `alt`s are fine but should be
-	 * double-checked, no `alt` is bad and is flagged red.
-	 */
-  /**
-	 * Ensure any lists only contain `li`s as children.
-	 */
-  /**
-	 * Forms require `action` attributes
-	 */
-  /**
-	 * Various form-field types have required attributes. `input`s need `type`
-	 * attributes, `textarea`s need `rows` and `cols` attributes and submit buttons
-	 * need a `value` attribute.
-	 */
+.mod-layout .container {
+  max-width: 1140px;
+  margin: 24px auto;
 }
-.css-debug img {
-  outline: 5px solid red;
+.mod-layout .header {
+  padding: 12px;
 }
-.css-debug img[alt] {
-  outline: none;
-}
-.css-debug ul > *:not(li),
-.css-debug ol > *:not(li) {
-  outline: 5px solid red;
-}
-.css-debug form {
-  outline: 5px solid red;
-}
-.css-debug form[action] {
-  outline: none;
-}
-.css-debug textarea,
-.css-debug input {
-  outline: 5px solid red;
-}
-.css-debug input[type] {
-  outline: none;
-}
-.css-debug textarea[rows][cols] {
-  outline: none;
-}
-.css-debug input[type=submit] {
-  outline: 5px solid red;
-}
-.css-debug input[type=submit][value] {
-  outline: none;
-}
-.mod-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  height: 450px;
-  margin-top: -225px;
-  margin-left: -300px;
+.mod-layout .main {
+  padding: 12px;
 }
 .skin-example-woot .text {
   color: blue;
+}
+.skin-layout-dev {
+  /**
+	 * Debug
+	 *
+	 * Enable this stylesheet to visually detect any improperly nested or
+	 * potentially invalid markup, or any potentially inaccessible code.
+	*/
+}
+.skin-layout-dev .badge {
+  font-size: 12px;
+  line-height: 20.57142857px;
+  font-size: 1.2rem;
+  line-height: 2.057142857142857rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  color: #f08921;
+  border: 1px solid #f08921;
+  border-radius: 6px;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.8);
+}
+.skin-layout-dev .badge.active,
+.skin-layout-dev .badge:hover {
+  color: white;
+  background: rgba(240, 137, 33, 0.8);
+}
+.skin-layout-dev.debug {
+  /**
+		 * Images require `alt` attributes, empty `alt`s are fine but should be
+		 * double-checked, no `alt` is bad and is flagged red.
+		 */
+  /**
+		 * Ensure any lists only contain `li`s as children.
+		 */
+  /**
+		 * Forms require `action` attributes
+		 */
+  /**
+		 * Various form-field types have required attributes. `input`s need `type`
+		 * attributes, `textarea`s need `rows` and `cols` attributes and submit buttons
+		 * need a `value` attribute.
+		 */
+}
+.skin-layout-dev.debug img {
+  outline: 5px solid red;
+}
+.skin-layout-dev.debug img[alt] {
+  outline: none;
+}
+.skin-layout-dev.debug ul > *:not(li),
+.skin-layout-dev.debug ol > *:not(li) {
+  outline: 5px solid red;
+}
+.skin-layout-dev.debug form {
+  outline: 5px solid red;
+}
+.skin-layout-dev.debug form[action] {
+  outline: none;
+}
+.skin-layout-dev.debug textarea,
+.skin-layout-dev.debug input {
+  outline: 5px solid red;
+}
+.skin-layout-dev.debug input[type] {
+  outline: none;
+}
+.skin-layout-dev.debug textarea[rows][cols] {
+  outline: none;
+}
+.skin-layout-dev.debug input[type=submit] {
+  outline: 5px solid red;
+}
+.skin-layout-dev.debug input[type=submit][value] {
+  outline: none;
 }
 /*# sourceMappingURL=styles.css.map */

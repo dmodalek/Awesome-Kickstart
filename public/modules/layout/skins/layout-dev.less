@@ -1,0 +1,85 @@
+.skin-layout-dev {
+
+	.badge {
+		.font-size(12);
+		user-select: none;
+		cursor: pointer;
+		position: fixed;
+		bottom: 1rem;
+		left: 1rem;
+		color: @c-brand;
+		border: 1px solid @c-brand;
+		border-radius: 6px;
+		padding: 4px 12px;
+		background: fade(white, 80%);
+
+		&.active,
+		&:hover {
+			color: white;
+			background: fade(@c-brand, 80%);
+		}
+	}
+
+	/**
+	 * Debug
+	 *
+	 * Enable this stylesheet to visually detect any improperly nested or
+	 * potentially invalid markup, or any potentially inaccessible code.
+	*/
+
+	&.debug {
+
+		/**
+		 * Images require `alt` attributes, empty `alt`s are fine but should be
+		 * double-checked, no `alt` is bad and is flagged red.
+		 */
+		img {
+			outline: 5px solid red;
+		}
+		img[alt] {
+			outline: none;
+		}
+
+		/**
+		 * Ensure any lists only contain `li`s as children.
+		 */
+		ul,
+		ol {
+			> *:not(li) {
+				outline: 5px solid red;
+			}
+		}
+
+		/**
+		 * Forms require `action` attributes
+		 */
+		form {
+			outline: 5px solid red;
+		}
+		form[action] {
+			outline: none;
+		}
+
+		/**
+		 * Various form-field types have required attributes. `input`s need `type`
+		 * attributes, `textarea`s need `rows` and `cols` attributes and submit buttons
+		 * need a `value` attribute.
+		 */
+		textarea,
+		input {
+			outline: 5px solid red;
+		}
+		input[type] {
+			outline: none;
+		}
+		textarea[rows][cols] {
+			outline: none;
+		}
+		input[type=submit] {
+			outline: 5px solid red;
+		}
+		input[type=submit][value] {
+			outline: none;
+		}
+	}
+}

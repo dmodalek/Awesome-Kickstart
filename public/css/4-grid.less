@@ -5,97 +5,107 @@
 // Vars
 
 @grid-fixed-width: 1140px;
-@grid-fixed-gutter: 100px;
+@grid-fixed-gutter: 20px;
 @grid-max-cols: 12;
 
 // Calculations
 
 @grid-fluid-gutter: percentage((100 / (@grid-fixed-width / @grid-fixed-gutter)) / 100);
-@grid-one-col: (100% - (@grid-fluid-gutter * (@grid-max-cols))) / @grid-max-cols;
-
-// Debug
-
-//._debug(@label: '', @cols: 12) {
-//
-//	at-root .grid-debug#{&},
-//    .grid-debug & {
-//
-//
-//		&:before,
-//		&:after {
-//			display: block !important;
-//			text-align: center;
-//			color: white;
-//			font-size: 11px;
-//		}
-//
-//		&:before {
-//			content: "#{@label}-#{@cols}" !important;
-//		}
-//
-//		&:after {
-//			extend %cf;
-//			content: "";
-//		}
-//
-//		if @label == 'row' {
-//
-//			&:before,
-//			&:after {
-//				margin: 10px 0 10px @grid-fluid-gutter;
-//				padding: 10px @grid-fixed-gutter/2;
-//				background-color: rgba(000, 000, 000, 0.1);
-//			}
-//		}
-//
-//		if @label == 'col' {
-//
-//			&:before,
-//			&:after {
-//				margin: 10px 0;
-//				padding: 5px 0;
-//				background-color: rgba(255, 255, 255, 0.1);
-//			}
-//
-//			margin-top: 4px !important;
-//			margin-bottom: 4px !important;
-//		}
-//	}
-//}
+@grid-one-col: (100% - (@grid-fluid-gutter * @grid-max-cols)) / @grid-max-cols;
 
 // Mixins
 
 .row() {
 	.cf();
-	margin: 0 -@grid-fluid-gutter/2;
-	//	include _debug('row', @grid-max-cols);
+	margin-left: -@grid-fluid-gutter/2;
+	margin-right: -@grid-fluid-gutter/2;
+	.grid-debug(row, @grid-max-cols);
 }
 
-.col(@grid-max-cols: 12) {
-	margin: 0 @grid-fluid-gutter/2;
+.col(@cols: 12) {
+	margin-left: @grid-fluid-gutter/2;
+	margin-right: @grid-fluid-gutter/2;
 	float: left;
-	width: (@grid-one-col * @grid-max-cols) + (@grid-fluid-gutter * (@grid-max-cols - 1));
-	//	include _debug('col', @grid-max-cols);
+	width: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols - 1));
+	width: @cols;
+	.grid-debug(col, @cols);
 }
 
-.push(@grid-max-cols: 1) {
-	margin-left: (@grid-one-col * @grid-max-cols) + (@grid-fluid-gutter * (@grid-max-cols + 1)) !important;
-	//	include _debug('push', @grid-max-cols);
+.push(@cols: 1) {
+	margin-left: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols + 1)) !important;
+	.grid-debug(push, @cols);
 }
 
-.pull(@grid-max-cols: 1) {
-	margin-left: (@grid-one-col * @grid-max-cols) + (@grid-fluid-gutter * (@grid-max-cols - 1));
-	//	include _debug('pull', @grid-max-cols);
+.pull(@cols: 1) {
+	margin-left: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols - 1));
+	.grid-debug(pull, @cols);
 }
 
-// Classes
+
+///////////////////////////////////////////////////////////
+
+// Generate HTML Grid Classes
 
 .row {
 	.row();
 }
 
-.col {
-	.col();
+.loop (@counter) when (@counter > 0) {
+
+	.col-@{counter} {
+		.col(@counter);
+	}
+
+	.loop(@counter - 1);
 }
 
+.loop (@grid-max-cols);
 
+
+///////////////////////////////////////////////////////////
+
+// Debug
+
+.grid-debug(@type, @cols) {
+
+	.debug & {
+
+		&:before,
+		&:after {
+			display: block !important;
+			text-align: center;
+			color: grey;
+			font-size: 12px;
+		}
+
+		&:before {
+			content: '@{type}-@{cols}' !important;
+		}
+
+		&:after {
+			.cf();
+			content: "-";
+			color: transparent;
+		}
+
+		.debug-type(@type);
+	}
+}
+
+.debug-type(col) {
+
+	&:before,
+	&:after {
+		margin: 10px 0 10px 0;
+		padding: 10px @grid-fixed-gutter/2;
+		background-color: fade(grey, 20%);
+	}
+}
+
+.debug-type(row) {
+
+	&:before,
+	&:after {
+		background-color: fade(grey, 40%);
+	}
+}

@@ -25,19 +25,61 @@
 
 </head>
 
-<body class="mod-layout">
+<body class="mod mod-layout <?= ($_SERVER['SERVER_NAME'] == 'localhost' ? 'skin-layout-dev' : ''); ?>">
 
-	<header class="header" role="banner">
+	<div class="container">
 
-		<?php echo module('logo') ?>
+		<header class="header" role="banner">
 
-	</header>
+			<?php echo module('logo') ?>
 
-	<main class="main" role="main"></main>
+		</header>
 
-	<aside class="sidebar" role="complementary"></aside>
+		<main class="main richtext" role="main">
 
-	<footer class="footer" role="contentinfo"></footer>
+			<h1>Awesome Kickstart</h1>
+
+			<p>This page is an overview about all the default elements.<br/>You can edit them in your index.php file.</p>
+
+			<h2>Heading H2</h2>
+			<h3>Heading H3</h3>
+			<h4>Heading H4</h4>
+
+			<p>A paragraph with a <a href="#">Link</a> and some more text.</p>
+
+
+			<ul>
+				<li>List Item</li>
+				<li>List Item</li>
+				<li>
+					<ul>
+						<li>Nested List Item</li>
+						<li>Nested List Item</li>
+					</ul>
+				</li>
+			</ul>
+
+			<p>Click the "Dev" button in the bottom left corner to toggle the Debug Mode. The Debug Mode shows your grid and potential markup errors (using red borders around those elements).</p>
+
+			<div class="row">
+				<div class="col-6">
+					<div class="row">
+						<div class="col-3"></div>
+						<div class="col-3"></div>
+						<div class="col-3"></div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+				<div class="col-6"></div>
+			</div>
+
+		</main>
+
+		<aside class="sidebar" role="complementary"></aside>
+
+		<footer class="footer" role="contentinfo"></footer>
+
+	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/dyn/jquery-1.11.0.min.js"><\/script>');</script>

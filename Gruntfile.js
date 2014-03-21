@@ -157,11 +157,11 @@ module.exports = function (grunt) {
 		watch: {
 			scripts: {
 				files: ['Gruntfile.js', '<%= project.scripts %>'],
-				tasks: ['jshint', 'uglify']
+				tasks: ['scripts-dev']
 			},
 			styles: {
 				files: '<%= project.styles %>',
-				tasks: ['less_imports', 'less']
+				tasks: ['styles-dev']
 			},
 			livereload: {
 				options: {
@@ -180,26 +180,47 @@ module.exports = function (grunt) {
 
 	///////////////////////////////////////////////////////////
 	
-	// Default Tasl
+	// Default - Dev Task
+
 	grunt.registerTask('default', [
-		'less_imports',
-		'less',
-		'autoprefixer',
-		'jshint',
-		'uglify:dev',
+		'styles-dev',
+		'scripts-dev',
 		'watch'
 	]);
 
 
-	// Minification
+	// Min - Build Task
 	
 	grunt.registerTask('min', [
+		'styles-min',
+		'scripts-min'
+	]);
+
+
+	///////////////////////////////////////////////////////////
+
+	// Sub Tasks
+
+	grunt.registerTask('styles-dev', [
+		'less_imports',
+		'less',
+		'autoprefixer'
+	]);
+
+	grunt.registerTask('styles-min', [
 		'less_imports',
 		'less',
 		'autoprefixer',
-		'cssmin',
+		'cssmin'
+	]);
+
+	grunt.registerTask('scripts-dev', [
+		'jshint',
+		'uglify:dev'
+	]);
+
+	grunt.registerTask('scripts-min', [
 		'jshint',
 		'uglify:min'
 	]);
-
 };

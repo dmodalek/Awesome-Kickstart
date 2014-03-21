@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 20.03.2014 at 17:55:09
+ * Generated with Grunt on 21.03.2014 at 15:11:16
  */
 
 var Tc = Tc || {};
@@ -237,8 +237,7 @@ Tc.$ = $, function() {
 }(Tc.$), function(a) {
     a(document).ready(function() {
         var b = a("html");
-        window.application = new Tc.Application(b), application.registerModules(b), application.registerModule(b, "Layout"), 
-        application.start(), console.log("Terrific JS started");
+        window.application = new Tc.Application(b), application.registerModules(b), application.start();
     });
 }(Tc.$), function() {
     "use strict";
@@ -267,6 +266,18 @@ Tc.$ = $, function() {
     Tc.Module.Example.Woot = function(a) {
         this.on = function(b) {
             a.on(b);
+        }, this.after = function() {
+            a.after();
+        };
+    };
+}(Tc.$), function() {
+    "use strict";
+    Tc.Module.Layout.Dev = function(a) {
+        this.on = function(b) {
+            var c = this.$ctx, d = $('<div class="badge" title="Click for Debug Mode">Dev</div>');
+            this.$ctx.prepend(d), d.on("click", function() {
+                d.toggleClass("active"), c.toggleClass("debug");
+            }), a.on(b);
         }, this.after = function() {
             a.after();
         };
