@@ -52,3 +52,4 @@ Here are some of the main features:
 ## Based on...
 
 * Fireshell: [github.com/toddmotto/fireshell](https://github.com/toddmotto/fireshell)
+* Rhythmless: [paulgb.github.io/rhythmless](http://paulgb.github.io/rhythmless)

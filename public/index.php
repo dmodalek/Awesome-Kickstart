@@ -25,7 +25,7 @@
 
 </head>
 
-<body class="mod mod-layout <?= ($_SERVER['SERVER_NAME'] == 'localhost' ? 'skin-layout-dev' : ''); ?>">
+<body class="debug mod mod-layout <?= ($_SERVER['SERVER_NAME'] == 'localhost' ? 'skin-layout-dev' : ''); ?>">
 
 	<div class="container">
 
@@ -70,7 +70,13 @@
 						<div class="col-3"></div>
 					</div>
 				</div>
-				<div class="col-6"></div>
+				<div class="col-6">
+					<div class="row">
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+						<div class="col-4"></div>
+					</div>
+				</div>
 			</div>
 
 		</main>

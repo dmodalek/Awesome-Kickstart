@@ -44,7 +44,7 @@
 
 ///////////////////////////////////////////////////////////
 
-// Generate HTML Grid Classes
+// Generate Grid HTML Classes
 
 .row {
 	.row();
@@ -84,8 +84,9 @@
 
 		&:after {
 			.cf();
-			content: "-";
+			content: "_";
 			color: transparent;
+			height: 10px;
 		}
 
 		.debug-type(@type);
@@ -94,10 +95,14 @@
 
 .debug-type(col) {
 
+	&:before {
+		margin: 10px 0 10px 0;
+		padding: 10px @grid-fixed-gutter/2;
+	}
+
 	&:before,
 	&:after {
 		margin: 10px 0 10px 0;
-		padding: 10px @grid-fixed-gutter/2;
 		background-color: fade(grey, 20%);
 	}
 }
@@ -106,6 +111,8 @@
 
 	&:before,
 	&:after {
+		margin-left: @grid-fluid-gutter/2;
+		margin-right: @grid-fluid-gutter/2;
 		background-color: fade(grey, 40%);
 	}
 }

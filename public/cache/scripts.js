@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 21.03.2014 at 15:11:16
+ * Generated with Grunt on 22.03.2014 at 14:41:03
  */
 
 var Tc = Tc || {};
@@ -274,12 +274,36 @@ Tc.$ = $, function() {
     "use strict";
     Tc.Module.Layout.Dev = function(a) {
         this.on = function(b) {
-            var c = this.$ctx, d = $('<div class="badge" title="Click for Debug Mode">Dev</div>');
-            this.$ctx.prepend(d), d.on("click", function() {
-                d.toggleClass("active"), c.toggleClass("debug");
+            var c = this, d = this.$ctx, e = $('<div class="badge" title="Click for Debug Mode">Dev</div>');
+            d.prepend(e), d.hasClass("debug") && e.toggleClass("active"), e.on("click", function() {
+                e.toggleClass("active"), d.toggleClass("debug"), $.proxy(c.showTerrificModuleOutline(), c), 
+                $.proxy(c.showVerticalRythm(), c);
             }), a.on(b);
-        }, this.after = function() {
-            a.after();
+        }, this.showVerticalRythm = function() {
+            var a = this.$ctx;
+            a.toggleClass("vertical-rythm");
+        }, this.showTerrificModuleOutline = function() {
+            var a = this.$ctx;
+            a.hasClass("debug") ? $(".mod:not(.mod-layout):visible").each(function() {
+                var a = $(this), b = a.offset(), c = {
+                    height: a.outerHeight(),
+                    width: a.outerWidth()
+                }, d = a.css("position"), e = a.attr("class").split(" "), f = "";
+                if (e.length > 1) for (var g = 0, h = e.length; h > g; g++) {
+                    var i = $.trim(e[g]);
+                    0 === i.indexOf("mod") && i.length > 3 && (f = i.substr(4));
+                }
+                ("static" == d || "relative" == d) && (d = "absolute");
+                var j = $('<span class="terrific-module">' + f + "</span>").css({
+                    zIndex: a.css("zIndex") + 1,
+                    position: d,
+                    width: c.width,
+                    height: c.height,
+                    top: b.top,
+                    left: b.left
+                });
+                $("body").append(j);
+            }) : $(".terrific-module").remove();
         };
     };
 }(Tc.$);

@@ -20,66 +20,17 @@
 		}
 	}
 
-	/**
-	 * Debug
-	 *
-	 * Enable this stylesheet to visually detect any improperly nested or
-	 * potentially invalid markup, or any potentially inaccessible code.
-	*/
+	.terrific-module {
+		display: block;
+		padding: @spacing;
+		color: white;
+		text-transform: capitalize;
+		background-color: fade(@c-brand, 50%);
+	}
 
-	&.debug {
-
-		/**
-		 * Images require `alt` attributes, empty `alt`s are fine but should be
-		 * double-checked, no `alt` is bad and is flagged red.
-		 */
-		img {
-			outline: 5px solid red;
-		}
-		img[alt] {
-			outline: none;
-		}
-
-		/**
-		 * Ensure any lists only contain `li`s as children.
-		 */
-		ul,
-		ol {
-			> *:not(li) {
-				outline: 5px solid red;
-			}
-		}
-
-		/**
-		 * Forms require `action` attributes
-		 */
-		form {
-			outline: 5px solid red;
-		}
-		form[action] {
-			outline: none;
-		}
-
-		/**
-		 * Various form-field types have required attributes. `input`s need `type`
-		 * attributes, `textarea`s need `rows` and `cols` attributes and submit buttons
-		 * need a `value` attribute.
-		 */
-		textarea,
-		input {
-			outline: 5px solid red;
-		}
-		input[type] {
-			outline: none;
-		}
-		textarea[rows][cols] {
-			outline: none;
-		}
-		input[type=submit] {
-			outline: 5px solid red;
-		}
-		input[type=submit][value] {
-			outline: none;
-		}
+	&.vertical-rythm {
+  		background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(95%, #ffffff), color-stop(95%, grey), to(grey));
+  		background: -moz-linear-gradient(top, #ffffff, #ffffff 95%, grey 95%, grey);
+  		background-size: auto 20px;
 	}
 }
