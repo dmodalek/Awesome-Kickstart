@@ -1150,6 +1150,11 @@ label[for] {
 	 * Debug Vertical Rythm
 	 */
 }
+.skin-layout-dev .debug-badges {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
 .skin-layout-dev .badge {
   font-size: 12px;
   line-height: 20.57142857px;
@@ -1157,24 +1162,16 @@ label[for] {
   line-height: 2.057142857142857rem;
   user-select: none;
   cursor: pointer;
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
   color: #f08921;
   border: 1px solid #f08921;
   border-radius: 6px;
   padding: 4px 12px;
   background: rgba(255, 255, 255, 0.8);
+  margin-right: 1rem;
 }
 .skin-layout-dev .badge.active {
   color: white;
   background: rgba(240, 137, 33, 0.8);
-}
-.skin-layout-dev .badge.badge-mod {
-  left: 7rem;
-}
-.skin-layout-dev .badge.badge-va {
-  left: 14rem;
 }
 .skin-layout-dev .terrific-module {
   display: block;

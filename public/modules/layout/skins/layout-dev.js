@@ -16,36 +16,128 @@
 			// Insert debug badges into page
 			this.addDebugBadges();
 
+			// Click on a badge
+			this.onBadgeClick();
+
 			// Activate a badge on page load
-			this.activateBadge(window.location.hash);
+			this.activateBadges();
 
 			// call parent constructor
 			parent.on(callback);
 		};
 
+		///////////////////////////////////////////////////////////
+
 		this.addDebugBadges = function () {
 
-			var self = this,
-				$ctx = this.$ctx,
+			var $ctx = this.$ctx,
+				$badgeContainer = $('<div class="debug-badges"></div>'),
 				badgeNames = ['Grid', 'Mod', 'VA'];
+
+			$ctx.prepend($badgeContainer);
 
 			$.each(badgeNames, function (index, element) {
 
 				var $badge = $('<a href="#' + element.toLowerCase() + '" class="badge badge-' + element.toLowerCase() + '">' + element + '</a>');
-				$ctx.prepend($badge);
-
-				$badge.on('click', function (e) {
-					e.preventDefault();
-					$badge.toggleClass('active');
-					$ctx.toggleClass('debug-' + element.toLowerCase());
-					self.setHash(element.toLowerCase());
-
-					if (element == 'Mod') {
-						$.proxy(self.addModOutline(), self);
-					}
-				});
+				$badgeContainer.prepend($badge);
 			});
 		};
+
+		this.onBadgeClick = function() {
+
+			var self = this,
+
+				$badges = $('.badge');
+
+			$badges.on('click', function(e) {
+
+				var $badge = $(e.target),
+					type = $badge.attr('href').replace('#','');
+
+				e.preventDefault();
+
+				//
+				$.proxy(self.toggleState($badge), self);
+
+				// Toggle Hash
+				self.toggleHash(type);
+			});
+		};
+
+		this.activateBadges = function() {
+
+			var self = this,
+				$ctx = this.$ctx,
+				currHash = window.location.hash,
+				$badge,
+				types;
+
+			if(currHash.length !== 0) {
+
+				types = currHash.replace('#','').split('+');
+
+				$.each(types, function(index, type) {
+					$badge = $('.badge-'+type, $ctx);
+					self.toggleState($badge);
+				});
+			}
+		};
+
+		///////////////////////////////////////////////////////////
+
+		this.toggleState = function($badge) {
+
+			var $ctx = this.$ctx,
+				type = $badge.attr('href').replace('#','');
+
+			// Toggle active class on badge
+			$badge.toggleClass('active');
+
+			// Toggle debug-type class on body
+			$ctx.toggleClass('debug-' + type );
+
+			// If type = mod: Execute JS
+			if (type == 'mod') {
+				this.addModOutline();
+			}
+		};
+
+		this.toggleHash = function(type) {
+
+			var currHash = window.location.hash,
+				newHash;
+
+			// Add Hash
+			if(currHash.indexOf(type) === -1) {
+
+				if(currHash.length === 0) {
+					newHash = type;
+				} else {
+					newHash = currHash + '+' + type;
+				}
+
+			// Remove Hash
+			} else {
+
+				var pos = currHash.indexOf(type);
+
+				if(currHash.charAt(pos-1) == '+') {
+					newHash = currHash.replace('+' + type, '');
+				}
+
+				if(currHash.charAt(pos-1) == '#' && currHash.length !== type.length) {
+					newHash = currHash.replace(type + '+', '');
+				}
+
+				if(currHash.charAt(pos-1) == '#' && currHash.length == type.length + 1) {
+					newHash = '';
+				}
+			}
+
+			window.location.hash = newHash;
+		};
+
+		///////////////////////////////////////////////////////////
 
 		this.addModOutline = function () {
 
@@ -88,18 +180,6 @@
 			} else {
 				$('.terrific-module').remove();
 			}
-		};
-
-		this.activateBadge = function(hash) {
-
-			var type = hash.replace('#', ''),
-				$badge = $('.badge-'+type, this.$ctx);
-
-			$badge.trigger('click', 'pageload');
-		};
-
-		this.setHash= function(hash) {
-			window.location.hash = hash;
 		};
 	};
 

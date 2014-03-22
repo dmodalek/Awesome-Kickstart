@@ -38,8 +38,7 @@
 
 		<main class="main richtext" role="main">
 
-			<p>This page is an overview about all the default elements.<br/>You can edit them in your index.php file.</p>
-
+			<h1>Awesome Kickstart</h1>
 			<h2>Heading H2</h2>
 			<h3>Heading H3</h3>
 			<h4>Heading H4</h4>
@@ -57,8 +56,6 @@
 					</ul>
 				</li>
 			</ul>
-
-			<p>Click the "Dev" button in the bottom left corner to toggle the Debug Mode. The Debug Mode shows your grid and potential markup errors (using red borders around those elements).</p>
 
 			<div class="row">
 				<div class="col-6">
