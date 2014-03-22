@@ -1,4 +1,5 @@
 <? include 'php/terrific.php'; ?>
+<? include 'php/helper.php'; ?>
 
 <!doctype html>
 <html class="no-js">
@@ -25,7 +26,7 @@
 
 </head>
 
-<body class="debug mod mod-layout <?= ($_SERVER['SERVER_NAME'] == 'localhost' ? 'skin-layout-dev' : ''); ?>">
+<body class="mod mod-layout debug <?= ($_SERVER['SERVER_NAME'] == 'localhost' ? 'skin-layout-dev ' : '') ?>">
 
 	<div class="container">
 
@@ -36,8 +37,6 @@
 		</header>
 
 		<main class="main richtext" role="main">
-
-			<h1>Awesome Kickstart</h1>
 
 			<p>This page is an overview about all the default elements.<br/>You can edit them in your index.php file.</p>
 

@@ -1139,7 +1139,8 @@ label[for] {
   padding: 12px;
 }
 .mod-layout .main {
-  padding: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .skin-example-woot .text {
   color: blue;
@@ -1172,9 +1173,12 @@ label[for] {
   text-transform: capitalize;
   background-color: rgba(240, 137, 33, 0.5);
 }
-.skin-layout-dev.vertical-rythm {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(95%, #ffffff), color-stop(95%, #808080), to(#808080));
-  background: -moz-linear-gradient(top, #ffffff, #ffffff 95%, #808080 95%, #808080);
-  background-size: auto 20px;
+.skin-layout-dev.debug {
+  /*
+		 * Vertical Rythm
+		 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(95%, #ffffff), color-stop(95%, #efefef), to(#efefef));
+  background: -moz-linear-gradient(top, #ffffff, #ffffff 95%, #efefef 95%, #efefef);
+  background-size: auto 24px;
 }
 /*# sourceMappingURL=../cache/styles.css.map */

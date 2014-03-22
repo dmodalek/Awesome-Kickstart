@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 22.03.2014 at 14:41:03
+ * Generated with Grunt on 22.03.2014 at 16:15:03
  */
 
 var Tc = Tc || {};
@@ -276,12 +276,8 @@ Tc.$ = $, function() {
         this.on = function(b) {
             var c = this, d = this.$ctx, e = $('<div class="badge" title="Click for Debug Mode">Dev</div>');
             d.prepend(e), d.hasClass("debug") && e.toggleClass("active"), e.on("click", function() {
-                e.toggleClass("active"), d.toggleClass("debug"), $.proxy(c.showTerrificModuleOutline(), c), 
-                $.proxy(c.showVerticalRythm(), c);
+                e.toggleClass("active"), d.toggleClass("debug"), $.proxy(c.showTerrificModuleOutline(), c);
             }), a.on(b);
-        }, this.showVerticalRythm = function() {
-            var a = this.$ctx;
-            a.toggleClass("vertical-rythm");
         }, this.showTerrificModuleOutline = function() {
             var a = this.$ctx;
             a.hasClass("debug") ? $(".mod:not(.mod-layout):visible").each(function() {

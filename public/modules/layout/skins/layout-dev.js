@@ -21,7 +21,7 @@
 				$ctx = this.$ctx,
 				$devBadge = $('<div class="badge" title="Click for Debug Mode">Dev</div>');
 
-			// Add Debug Badge
+			// Insert Debug Badge
 			$ctx.prepend($devBadge);
 
 			if ($ctx.hasClass('debug')) {
@@ -35,18 +35,10 @@
 				$ctx.toggleClass('debug');
 
 				$.proxy(self.showTerrificModuleOutline(), self);
-				$.proxy(self.showVerticalRythm(), self);
 			});
-
 
 			// call parent constructor
 			parent.on(callback);
-		};
-
-		this.showVerticalRythm = function () {
-			var $ctx = this.$ctx;
-
-			$ctx.toggleClass('vertical-rythm');
 		};
 
 
