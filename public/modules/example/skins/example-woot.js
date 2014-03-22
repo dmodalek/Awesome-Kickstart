@@ -6,6 +6,9 @@
 
 		this.on = function (callback) {
 
+			var self = this,
+				$ctx = this.$ctx;
+
 			// Do stuff here
 			//...
 

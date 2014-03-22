@@ -13,40 +13,45 @@
 
 		this.on = function (callback) {
 
-			/*
-			 * Add Dev Badge to toggle Debug Mode
-			 */
+			// Insert debug badges into page
+			this.addDebugBadges();
 
-			var self = this,
-				$ctx = this.$ctx,
-				$devBadge = $('<div class="badge" title="Click for Debug Mode">Dev</div>');
-
-			// Insert Debug Badge
-			$ctx.prepend($devBadge);
-
-			if ($ctx.hasClass('debug')) {
-				$devBadge.toggleClass('active');
-			}
-
-			// Toggle Debug Mode
-			$devBadge.on('click', function () {
-
-				$devBadge.toggleClass('active');
-				$ctx.toggleClass('debug');
-
-				$.proxy(self.showTerrificModuleOutline(), self);
-			});
+			// Activate a badge on page load
+			this.activateBadge(window.location.hash);
 
 			// call parent constructor
 			parent.on(callback);
 		};
 
+		this.addDebugBadges = function () {
 
-		this.showTerrificModuleOutline = function () {
+			var self = this,
+				$ctx = this.$ctx,
+				badgeNames = ['Grid', 'Mod', 'VA'];
+
+			$.each(badgeNames, function (index, element) {
+
+				var $badge = $('<a href="#' + element.toLowerCase() + '" class="badge badge-' + element.toLowerCase() + '">' + element + '</a>');
+				$ctx.prepend($badge);
+
+				$badge.on('click', function (e) {
+					e.preventDefault();
+					$badge.toggleClass('active');
+					$ctx.toggleClass('debug-' + element.toLowerCase());
+					self.setHash(element.toLowerCase());
+
+					if (element == 'Mod') {
+						$.proxy(self.addModOutline(), self);
+					}
+				});
+			});
+		};
+
+		this.addModOutline = function () {
 
 			var $ctx = this.$ctx;
 
-			if($ctx.hasClass('debug')) {
+			if ($ctx.hasClass('debug-mod')) {
 
 				$('.mod:not(.mod-layout):visible').each(function () {
 
@@ -85,6 +90,18 @@
 			}
 		};
 
+		this.activateBadge = function(hash) {
+
+			var type = hash.replace('#', ''),
+				$badge = $('.badge-'+type, this.$ctx);
+
+			$badge.trigger('click', 'pageload');
+		};
+
+		this.setHash= function(hash) {
+			window.location.hash = hash;
+		};
 	};
+
 
 })(Tc.$);

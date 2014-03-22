@@ -19,7 +19,7 @@
 	.cf();
 	margin-left: -@grid-fluid-gutter/2;
 	margin-right: -@grid-fluid-gutter/2;
-	.grid-debug(row, @grid-max-cols);
+	.debug-grid(row, @grid-max-cols);
 }
 
 .col(@cols: 12) {
@@ -28,17 +28,17 @@
 	float: left;
 	width: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols - 1));
 	width: @cols;
-	.grid-debug(col, @cols);
+	.debug-grid(col, @cols);
 }
 
 .push(@cols: 1) {
 	margin-left: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols + 1)) !important;
-	.grid-debug(push, @cols);
+	.debug-grid(push, @cols);
 }
 
 .pull(@cols: 1) {
 	margin-left: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols - 1));
-	.grid-debug(pull, @cols);
+	.debug-grid(pull, @cols);
 }
 
 
@@ -66,9 +66,9 @@
 
 // Debug
 
-.grid-debug(@type, @cols) {
+.debug-grid(@type, @cols) {
 
-	.debug & {
+	.debug-grid & {
 
 		&:before,
 		&:after {

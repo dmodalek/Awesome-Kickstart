@@ -1,4 +1,6 @@
 .skin-layout-dev {
+	
+	@c-dev: #F08921;
 
 	.badge {
 		.font-size(12);
@@ -7,16 +9,23 @@
 		position: fixed;
 		bottom: 1rem;
 		left: 1rem;
-		color: @c-brand;
-		border: 1px solid @c-brand;
+		color: @c-dev;
+		border: 1px solid @c-dev;
 		border-radius: 6px;
 		padding: 4px 12px;
 		background: fade(white, 80%);
 
-		&.active,
-		&:hover {
+		&.active {
 			color: white;
-			background: fade(@c-brand, 80%);
+			background: fade(@c-dev, 80%);
+		}
+
+		&.badge-mod {
+			left: 7rem;
+		}
+
+		&.badge-va {
+			left: 14rem;
 		}
 	}
 
@@ -25,15 +34,14 @@
 		padding: @spacing;
 		color: white;
 		text-transform: capitalize;
-		background-color: fade(@c-brand, 50%);
+		background-color: fade(@c-dev, 50%);
 	}
 
-	&.debug {
+	/*
+	 * Debug Vertical Rythm
+	 */
 
-		/*
-		 * Vertical Rythm
-		 */
-
+	&.debug-va {
   		background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(95%, #ffffff), color-stop(95%, #efefef), to(#efefef));
   		background: -moz-linear-gradient(top, #ffffff, #ffffff 95%, #efefef 95%, #efefef);
   		background-size: auto @base-line-height;

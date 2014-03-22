@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 22.03.2014 at 16:29:10
+ * Generated with Grunt on 22.03.2014 at 18:36:20
  */
 
 var Tc = Tc || {};
@@ -246,6 +246,7 @@ Tc.$ = $, function() {
             this._super(a, b, c);
         },
         on: function(a) {
+            this.$ctx;
             a();
         },
         after: function() {}
@@ -265,6 +266,7 @@ Tc.$ = $, function() {
     "use strict";
     Tc.Module.Example.Woot = function(a) {
         this.on = function(b) {
+            this.$ctx;
             a.on(b);
         }, this.after = function() {
             a.after();
@@ -274,13 +276,19 @@ Tc.$ = $, function() {
     "use strict";
     Tc.Module.Layout.Dev = function(a) {
         this.on = function(b) {
-            var c = this, d = this.$ctx, e = $('<div class="badge" title="Click for Debug Mode">Dev</div>');
-            d.prepend(e), d.hasClass("debug") && e.toggleClass("active"), e.on("click", function() {
-                e.toggleClass("active"), d.toggleClass("debug"), $.proxy(c.showTerrificModuleOutline(), c);
-            }), a.on(b);
-        }, this.showTerrificModuleOutline = function() {
+            this.addDebugBadges(), this.activateBadge(window.location.hash), a.on(b);
+        }, this.addDebugBadges = function() {
+            var a = this, b = this.$ctx, c = [ "Grid", "Mod", "VA" ];
+            $.each(c, function(c, d) {
+                var e = $('<a href="#' + d.toLowerCase() + '" class="badge badge-' + d.toLowerCase() + '">' + d + "</a>");
+                b.prepend(e), e.on("click", function(c) {
+                    c.preventDefault(), e.toggleClass("active"), b.toggleClass("debug-" + d.toLowerCase()), 
+                    a.setHash(d.toLowerCase()), "Mod" == d && $.proxy(a.addModOutline(), a);
+                });
+            });
+        }, this.addModOutline = function() {
             var a = this.$ctx;
-            a.hasClass("debug") ? $(".mod:not(.mod-layout):visible").each(function() {
+            a.hasClass("debug-mod") ? $(".mod:not(.mod-layout):visible").each(function() {
                 var a = $(this), b = a.offset(), c = {
                     height: a.outerHeight(),
                     width: a.outerWidth()
@@ -300,6 +308,11 @@ Tc.$ = $, function() {
                 });
                 $("body").append(j);
             }) : $(".terrific-module").remove();
+        }, this.activateBadge = function(a) {
+            var b = a.replace("#", ""), c = $(".badge-" + b, this.$ctx);
+            c.trigger("click", "pageload");
+        }, this.setHash = function(a) {
+            window.location.hash = a;
         };
     };
 }(Tc.$);

@@ -123,8 +123,7 @@ dfn {
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
 }
 /**
@@ -286,9 +285,7 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -304,7 +301,7 @@ input[type="search"] {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
-          box-sizing: content-box;
+  box-sizing: content-box;
 }
 /**
  * Remove inner padding and search cancel button in Safari 5 and Chrome
@@ -394,9 +391,7 @@ font-face {
 .vertical-align {
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 /**
  * Make elements reponsive (eg. images), scale blocks in fluid layouts
@@ -438,29 +433,29 @@ font-face {
   display: table;
   clear: both;
 }
-.debug .row:before,
-.debug .row:after {
+.debug-grid .row:before,
+.debug-grid .row:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .row:before {
+.debug-grid .row:before {
   content: 'row-12' !important;
 }
-.debug .row:after {
+.debug-grid .row:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .row:after:after {
+.debug-grid .row:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .row:before,
-.debug .row:after {
+.debug-grid .row:before,
+.debug-grid .row:after {
   margin-left: 0.87719298%;
   margin-right: 0.87719298%;
   background-color: rgba(128, 128, 128, 0.4);
@@ -472,33 +467,33 @@ font-face {
   width: 98.24561404%;
   width: 12;
 }
-.debug .col-12:before,
-.debug .col-12:after {
+.debug-grid .col-12:before,
+.debug-grid .col-12:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-12:before {
+.debug-grid .col-12:before {
   content: 'col-12' !important;
 }
-.debug .col-12:after {
+.debug-grid .col-12:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-12:after:after {
+.debug-grid .col-12:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-12:before {
+.debug-grid .col-12:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-12:before,
-.debug .col-12:after {
+.debug-grid .col-12:before,
+.debug-grid .col-12:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -509,33 +504,33 @@ font-face {
   width: 89.9122807%;
   width: 11;
 }
-.debug .col-11:before,
-.debug .col-11:after {
+.debug-grid .col-11:before,
+.debug-grid .col-11:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-11:before {
+.debug-grid .col-11:before {
   content: 'col-11' !important;
 }
-.debug .col-11:after {
+.debug-grid .col-11:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-11:after:after {
+.debug-grid .col-11:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-11:before {
+.debug-grid .col-11:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-11:before,
-.debug .col-11:after {
+.debug-grid .col-11:before,
+.debug-grid .col-11:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -546,33 +541,33 @@ font-face {
   width: 81.57894737%;
   width: 10;
 }
-.debug .col-10:before,
-.debug .col-10:after {
+.debug-grid .col-10:before,
+.debug-grid .col-10:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-10:before {
+.debug-grid .col-10:before {
   content: 'col-10' !important;
 }
-.debug .col-10:after {
+.debug-grid .col-10:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-10:after:after {
+.debug-grid .col-10:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-10:before {
+.debug-grid .col-10:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-10:before,
-.debug .col-10:after {
+.debug-grid .col-10:before,
+.debug-grid .col-10:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -583,33 +578,33 @@ font-face {
   width: 73.24561404%;
   width: 9;
 }
-.debug .col-9:before,
-.debug .col-9:after {
+.debug-grid .col-9:before,
+.debug-grid .col-9:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-9:before {
+.debug-grid .col-9:before {
   content: 'col-9' !important;
 }
-.debug .col-9:after {
+.debug-grid .col-9:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-9:after:after {
+.debug-grid .col-9:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-9:before {
+.debug-grid .col-9:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-9:before,
-.debug .col-9:after {
+.debug-grid .col-9:before,
+.debug-grid .col-9:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -620,33 +615,33 @@ font-face {
   width: 64.9122807%;
   width: 8;
 }
-.debug .col-8:before,
-.debug .col-8:after {
+.debug-grid .col-8:before,
+.debug-grid .col-8:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-8:before {
+.debug-grid .col-8:before {
   content: 'col-8' !important;
 }
-.debug .col-8:after {
+.debug-grid .col-8:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-8:after:after {
+.debug-grid .col-8:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-8:before {
+.debug-grid .col-8:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-8:before,
-.debug .col-8:after {
+.debug-grid .col-8:before,
+.debug-grid .col-8:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -657,33 +652,33 @@ font-face {
   width: 56.57894737%;
   width: 7;
 }
-.debug .col-7:before,
-.debug .col-7:after {
+.debug-grid .col-7:before,
+.debug-grid .col-7:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-7:before {
+.debug-grid .col-7:before {
   content: 'col-7' !important;
 }
-.debug .col-7:after {
+.debug-grid .col-7:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-7:after:after {
+.debug-grid .col-7:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-7:before {
+.debug-grid .col-7:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-7:before,
-.debug .col-7:after {
+.debug-grid .col-7:before,
+.debug-grid .col-7:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -694,33 +689,33 @@ font-face {
   width: 48.24561404%;
   width: 6;
 }
-.debug .col-6:before,
-.debug .col-6:after {
+.debug-grid .col-6:before,
+.debug-grid .col-6:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-6:before {
+.debug-grid .col-6:before {
   content: 'col-6' !important;
 }
-.debug .col-6:after {
+.debug-grid .col-6:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-6:after:after {
+.debug-grid .col-6:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-6:before {
+.debug-grid .col-6:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-6:before,
-.debug .col-6:after {
+.debug-grid .col-6:before,
+.debug-grid .col-6:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -731,33 +726,33 @@ font-face {
   width: 39.9122807%;
   width: 5;
 }
-.debug .col-5:before,
-.debug .col-5:after {
+.debug-grid .col-5:before,
+.debug-grid .col-5:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-5:before {
+.debug-grid .col-5:before {
   content: 'col-5' !important;
 }
-.debug .col-5:after {
+.debug-grid .col-5:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-5:after:after {
+.debug-grid .col-5:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-5:before {
+.debug-grid .col-5:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-5:before,
-.debug .col-5:after {
+.debug-grid .col-5:before,
+.debug-grid .col-5:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -768,33 +763,33 @@ font-face {
   width: 31.57894737%;
   width: 4;
 }
-.debug .col-4:before,
-.debug .col-4:after {
+.debug-grid .col-4:before,
+.debug-grid .col-4:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-4:before {
+.debug-grid .col-4:before {
   content: 'col-4' !important;
 }
-.debug .col-4:after {
+.debug-grid .col-4:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-4:after:after {
+.debug-grid .col-4:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-4:before {
+.debug-grid .col-4:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-4:before,
-.debug .col-4:after {
+.debug-grid .col-4:before,
+.debug-grid .col-4:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -805,33 +800,33 @@ font-face {
   width: 23.24561404%;
   width: 3;
 }
-.debug .col-3:before,
-.debug .col-3:after {
+.debug-grid .col-3:before,
+.debug-grid .col-3:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-3:before {
+.debug-grid .col-3:before {
   content: 'col-3' !important;
 }
-.debug .col-3:after {
+.debug-grid .col-3:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-3:after:after {
+.debug-grid .col-3:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-3:before {
+.debug-grid .col-3:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-3:before,
-.debug .col-3:after {
+.debug-grid .col-3:before,
+.debug-grid .col-3:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -842,33 +837,33 @@ font-face {
   width: 14.9122807%;
   width: 2;
 }
-.debug .col-2:before,
-.debug .col-2:after {
+.debug-grid .col-2:before,
+.debug-grid .col-2:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-2:before {
+.debug-grid .col-2:before {
   content: 'col-2' !important;
 }
-.debug .col-2:after {
+.debug-grid .col-2:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-2:after:after {
+.debug-grid .col-2:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-2:before {
+.debug-grid .col-2:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-2:before,
-.debug .col-2:after {
+.debug-grid .col-2:before,
+.debug-grid .col-2:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -879,33 +874,33 @@ font-face {
   width: 6.57894737%;
   width: 1;
 }
-.debug .col-1:before,
-.debug .col-1:after {
+.debug-grid .col-1:before,
+.debug-grid .col-1:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug .col-1:before {
+.debug-grid .col-1:before {
   content: 'col-1' !important;
 }
-.debug .col-1:after {
+.debug-grid .col-1:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug .col-1:after:after {
+.debug-grid .col-1:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug .col-1:before {
+.debug-grid .col-1:before {
   margin: 10px 0 10px 0;
   padding: 10px 10px;
 }
-.debug .col-1:before,
-.debug .col-1:after {
+.debug-grid .col-1:before,
+.debug-grid .col-1:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
@@ -986,10 +981,6 @@ small {
 /*
  * Selected Text Styling
  */
-::-moz-selection {
-  color: #f08921;
-  background: #666666;
-}
 ::selection {
   color: #f08921;
   background: #666666;
@@ -999,8 +990,7 @@ small {
  */
 * {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 html {
   overflow-y: scroll;
@@ -1155,15 +1145,17 @@ label[for] {
 .skin-example-woot .text {
   color: blue;
 }
+.skin-layout-dev {
+  /*
+	 * Debug Vertical Rythm
+	 */
+}
 .skin-layout-dev .badge {
   font-size: 12px;
   line-height: 20.57142857px;
   font-size: 1.2rem;
   line-height: 2.057142857142857rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   cursor: pointer;
   position: fixed;
   bottom: 1rem;
@@ -1174,10 +1166,15 @@ label[for] {
   padding: 4px 12px;
   background: rgba(255, 255, 255, 0.8);
 }
-.skin-layout-dev .badge.active,
-.skin-layout-dev .badge:hover {
+.skin-layout-dev .badge.active {
   color: white;
   background: rgba(240, 137, 33, 0.8);
+}
+.skin-layout-dev .badge.badge-mod {
+  left: 7rem;
+}
+.skin-layout-dev .badge.badge-va {
+  left: 14rem;
 }
 .skin-layout-dev .terrific-module {
   display: block;
@@ -1186,12 +1183,9 @@ label[for] {
   text-transform: capitalize;
   background-color: rgba(240, 137, 33, 0.5);
 }
-.skin-layout-dev.debug {
-  /*
-		 * Vertical Rythm
-		 */
+.skin-layout-dev.debug-va {
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(95%, #ffffff), color-stop(95%, #efefef), to(#efefef));
-  -webkit-background-size: auto 24px;
-          background-size: auto 24px;
+  background: -moz-linear-gradient(top, #ffffff, #ffffff 95%, #efefef 95%, #efefef);
+  background-size: auto 24px;
 }
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=../cache/styles.css.map */
