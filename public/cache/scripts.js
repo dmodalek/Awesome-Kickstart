@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 22.03.2014 at 16:15:03
+ * Generated with Grunt on 22.03.2014 at 16:29:10
  */
 
 var Tc = Tc || {};
@@ -257,7 +257,7 @@ Tc.$ = $, function() {
             this._super(a, b, c);
         },
         on: function(a) {
-            a();
+            console.log("Layout Module loaded"), a();
         },
         after: function() {}
     });

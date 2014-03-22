@@ -16,8 +16,7 @@
 
 		on: function (callback) {
 
-			// Do stuff here
-			//...
+			console.log('Layout Module loaded');
 
 			// callback
 			callback();
