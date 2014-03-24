@@ -13,23 +13,6 @@
 	}
 }
 
-/**
- * Image replacement
- */
-
-.ir {
-	background-color: transparent;
-	border: 0;
-	overflow: hidden;
-
-	&:before {
-		content: "";
-		display: block;
-		width: 0;
-		height: 150%;
-	}
-}
-
 /*
  * Vertical align everything
  */
@@ -39,6 +22,25 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
 
 /**
  * Make elements reponsive (eg. images), scale blocks in fluid layouts

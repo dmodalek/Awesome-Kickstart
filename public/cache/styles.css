@@ -359,6 +359,13 @@ font-face {
 /*
  * Spacing
  */
+/*
+ * Mediaqueries
+ * use: @media (min-width: @desktop-min)
+ */
+/*
+ * Project
+ */
 /**
  * Micro clearfix
  * - As per http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
@@ -1156,6 +1163,7 @@ label[for] {
   left: 1rem;
 }
 .skin-layout-dev .badge {
+  font-family: Arial, sans-serif;
   font-size: 12px;
   line-height: 20.57142857px;
   font-size: 1.2rem;
