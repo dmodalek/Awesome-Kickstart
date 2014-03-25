@@ -10,12 +10,12 @@ A Kickstart for your next PHP Project using Terrific, LESS and Grunt.
 ```bash
   $ git clone git@github.com:dmodalek/Awesome-Kickstart.git .
 ```
-* Point your vHost to your your project public folder
+* Point your vHost to the project public folder
 ```bash
 # Your project
 <VirtualHost *:80>
     ServerName your-project.loc
-    DocumentRoot /Users/You/Sites/Your-Project
+    DocumentRoot /Users/You/Sites/Your-Project/public
 </VirtualHost>
 ```
 
