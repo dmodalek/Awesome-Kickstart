@@ -6,7 +6,10 @@ A Kickstart for your next PHP Project using Terrific, LESS and Grunt.
 
 ## Getting started
 
-* $ git clone git@github.com:dmodalek/Awesome-Kickstart.git .
+* Clone this repo in your project folder
+```ruby
+$ git clone git@github.com:dmodalek/Awesome-Kickstart.git .
+```
 
 
 ## Features
