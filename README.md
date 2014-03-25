@@ -4,6 +4,10 @@ A Kickstart for your next PHP Project using Terrific, LESS and Grunt.
 
 * Source: [github.com/dmodalek/awesome-frontend-kickstart](http://github.com/dmodalek/awesome-kickstart)
 
+## Getting started
+
+* $ git clone git@github.com:dmodalek/Awesome-Kickstart.git .
+
 
 ## Features
 
