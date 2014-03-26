@@ -10,6 +10,10 @@ A Kickstart for your next PHP Project using Terrific, LESS and Grunt.
 ```bash
   $ git clone git@github.com:dmodalek/Awesome-Kickstart.git .
 ```
+* Install dependencies
+```bash
+  $ npm install
+```
 * Point your vHost to the project public folder
 ```bash
 # Your project
