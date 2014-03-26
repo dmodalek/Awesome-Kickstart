@@ -15,7 +15,7 @@ A Kickstart for your next PHP Project using Terrific, LESS and Grunt.
 # Your project
 <VirtualHost *:80>
     ServerName your-project.loc
-    DocumentRoot /Users/You/Sites/Your-Project/public
+    DocumentRoot "/Users/You/Sites/Your-Project/public"
 </VirtualHost>
 ```
 
