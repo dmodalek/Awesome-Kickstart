@@ -14,6 +14,10 @@ A Kickstart for your next PHP Project using Terrific, LESS and Grunt.
 ```bash
   $ npm install
 ```
+* Build with Grunt
+```bash
+  $ grunt
+```
 * Point your vHost to the project public folder
 ```bash
 # Your project
@@ -22,6 +26,8 @@ A Kickstart for your next PHP Project using Terrific, LESS and Grunt.
     DocumentRoot "/Users/You/Sites/Your-Project/public"
 </VirtualHost>
 ```
+* Open your browser and start developing
+
 
 ## Features
 
