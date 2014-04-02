@@ -1,5 +1,6 @@
 <? include 'php/terrific.php'; ?>
 <? include 'php/helper.php'; ?>
+<? $dev = ($_SERVER['SERVER_NAME'] == 'localhost' ? true : false); ?>
 
 <!doctype html>
 <html class="no-js">
@@ -23,7 +24,7 @@
 	<![endif]-->
 
 	<!-- Live Reload !-->
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	<? if($dev) { echo '<script>document.write(\'<script src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':35729/livereload.js?snipver=1"></\' + \'script>\')</script>'; } ?>
 
 </head>
 
