@@ -4,6 +4,30 @@ A Kickstart for your next PHP Project using Terrific, LESS and Grunt.
 
 * Source: [github.com/dmodalek/awesome-frontend-kickstart](http://github.com/dmodalek/awesome-kickstart)
 
+## Getting started
+
+* Clone this repo in your project folder 
+```bash
+  $ git clone git@github.com:dmodalek/Awesome-Kickstart.git .
+```
+* Install dependencies
+```bash
+  $ npm install
+```
+* Build with Grunt
+```bash
+  $ grunt
+```
+* Point your vHost to the project public folder
+```bash
+# Your project
+<VirtualHost *:80>
+    ServerName your-project.loc
+    DocumentRoot "/Users/You/Sites/Your-Project/public"
+</VirtualHost>
+```
+* Open your browser and start developing
+
 
 ## Features
 
