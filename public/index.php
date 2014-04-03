@@ -28,7 +28,7 @@
 
 </head>
 
-<body class="mod mod-layout <?= ($_SERVER['SERVER_NAME'] == 'localhost' ? 'skin-layout-dev ' : '') ?>">
+<body class="mod mod-layout <?= ($dev == true ? 'skin-layout-dev ' : '') ?>">
 
 	<div class="container">
 
