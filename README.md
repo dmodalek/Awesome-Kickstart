@@ -1,6 +1,6 @@
 # Awesome Kickstart
 
-![Awesome Theme](https://raw.github.com/dmodalek/wordpress-awesome/master/public/wp-content/themes/awesome-theme/screenshot.png)
+![Awesome Theme](https://raw.github.com/dmodalek/awesome-kickstart/master/public/img/example-logo.png)
 
 A Kickstart for your next PHP Project using Terrific, LESS and Grunt.
 
