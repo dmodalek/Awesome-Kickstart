@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 10.04.2014 at 10:31:25
+ * Generated with Grunt on 10.04.2014 at 11:34:55
  */
 
 var Tc = Tc || {};
@@ -239,7 +239,13 @@ Tc.$ = $, function() {
         var b = a("html");
         window.application = new Tc.Application(b), application.registerModules(b), application.start();
     });
-}(Tc.$), function() {
+}(Tc.$), function(a, b, c, d, e, f) {
+    a.GoogleAnalyticsObject = d, a[d] || (a[d] = function() {
+        (a[d].q = a[d].q || []).push(arguments);
+    }), a[d].l = +new Date(), e = b.createElement(c), f = b.getElementsByTagName(c)[0], 
+    e.src = "//www.google-analytics.com/analytics.js", f.parentNode.insertBefore(e, f);
+}(window, document, "script", "ga"), ga("create", "UA-XXXXX-X"), ga("send", "pageview"), 
+function() {
     "use strict";
     Tc.Module.Example = Tc.Module.extend({
         init: function(a, b, c) {
