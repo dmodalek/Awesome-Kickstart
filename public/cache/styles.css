@@ -359,17 +359,6 @@ th {
 /**
  * Font-sizes (in pixels).
  */
-/**
- * Fonts
- * - Give each font a name
- */
-font-face {
-  font-family: 'Icon Moon';
-  src: url('../fonts/iconmoon/icomoon.eot?rofuzr');
-  src: url('../fonts/iconmoon/icomoon.eot?#iefixrofuzr') format('embedded-opentype'), url('../fonts/iconmoon/icomoon.woff?rofuzr') format('woff'), url('../fonts/iconmoon/icomoon.ttf?rofuzr') format('truetype'), url('../fonts/iconmoon/icomoon.svg?rofuzr#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
 /*
  * Spacing
  */
@@ -440,6 +429,116 @@ font-face {
  * Font size with line-height
  * - Create font-sizes with appropriate line heights
  */
+/*
+ * Typography
+ */
+h1,
+.h1 {
+  font-size: 32px;
+  line-height: 54.85714286px;
+  font-size: 3.2pxrem;
+  line-height: 5.485714285714286pxrem;
+  font-weight: normal;
+}
+h2,
+.h2 {
+  font-size: 26px;
+  line-height: 44.57142857px;
+  font-size: 2.6pxrem;
+  line-height: 4.457142857142857pxrem;
+  font-weight: normal;
+}
+h3,
+.h3 {
+  font-size: 20px;
+  line-height: 34.28571429px;
+  font-size: 2pxrem;
+  line-height: 3.4285714285714284pxrem;
+  font-weight: normal;
+}
+h4,
+.h4 {
+  font-size: 18px;
+  line-height: 30.85714286px;
+  font-size: 1.8pxrem;
+  line-height: 3.0857142857142854pxrem;
+  font-weight: normal;
+}
+.giga {
+  font-size: 96px;
+  line-height: 164.57142857px;
+  font-size: 9.6pxrem;
+  line-height: 16.457142857142856pxrem;
+}
+.mega {
+  font-size: 72px;
+  line-height: 123.42857143px;
+  font-size: 7.2pxrem;
+  line-height: 12.342857142857142pxrem;
+}
+.kilo {
+  font-size: 48px;
+  line-height: 82.28571429px;
+  font-size: 4.8pxrem;
+  line-height: 8.228571428571428pxrem;
+}
+.small {
+  font-size: 12px;
+  line-height: 20.57142857px;
+  font-size: 1.2pxrem;
+  line-height: 2.057142857142857pxrem;
+}
+.micro {
+  font-size: 10px;
+  line-height: 17.14285714px;
+  font-size: 1pxrem;
+  line-height: 1.7142857142857142pxrem;
+}
+/*
+ * Small
+ */
+small {
+  font-size: 12px;
+  line-height: 20.57142857px;
+  font-size: 1.2pxrem;
+  line-height: 2.057142857142857pxrem;
+}
+/*
+ * Selected Text Styling
+ */
+::selection {
+  color: #f08921;
+  background: #666666;
+}
+/**
+ * Fonts
+ * - Give each font a name
+ */
+font-face {
+  font-family: 'Icon Moon';
+  src: url('../fonts/iconmoon/icomoon.eot?rofuzr');
+  src: url('../fonts/iconmoon/icomoon.eot?#iefixrofuzr') format('embedded-opentype'), url('../fonts/iconmoon/icomoon.woff?rofuzr') format('woff'), url('../fonts/iconmoon/icomoon.ttf?rofuzr') format('truetype'), url('../fonts/iconmoon/icomoon.svg?rofuzr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+ * Icon Moon Classes
+ */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'Icon Moon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-arrow-down:before {
+  content: "\e600";
+}
 /**
  * Awesome Grid
  */
@@ -924,87 +1023,6 @@ font-face {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
-/*
- * Typography
- */
-h1,
-.h1 {
-  font-size: 32px;
-  line-height: 54.85714286px;
-  font-size: 3.2pxrem;
-  line-height: 5.485714285714286pxrem;
-  font-weight: normal;
-}
-h2,
-.h2 {
-  font-size: 26px;
-  line-height: 44.57142857px;
-  font-size: 2.6pxrem;
-  line-height: 4.457142857142857pxrem;
-  font-weight: normal;
-}
-h3,
-.h3 {
-  font-size: 20px;
-  line-height: 34.28571429px;
-  font-size: 2pxrem;
-  line-height: 3.4285714285714284pxrem;
-  font-weight: normal;
-}
-h4,
-.h4 {
-  font-size: 18px;
-  line-height: 30.85714286px;
-  font-size: 1.8pxrem;
-  line-height: 3.0857142857142854pxrem;
-  font-weight: normal;
-}
-.giga {
-  font-size: 96px;
-  line-height: 164.57142857px;
-  font-size: 9.6pxrem;
-  line-height: 16.457142857142856pxrem;
-}
-.mega {
-  font-size: 72px;
-  line-height: 123.42857143px;
-  font-size: 7.2pxrem;
-  line-height: 12.342857142857142pxrem;
-}
-.kilo {
-  font-size: 48px;
-  line-height: 82.28571429px;
-  font-size: 4.8pxrem;
-  line-height: 8.228571428571428pxrem;
-}
-.small {
-  font-size: 12px;
-  line-height: 20.57142857px;
-  font-size: 1.2pxrem;
-  line-height: 2.057142857142857pxrem;
-}
-.micro {
-  font-size: 10px;
-  line-height: 17.14285714px;
-  font-size: 1pxrem;
-  line-height: 1.7142857142857142pxrem;
-}
-/*
- * Small
- */
-small {
-  font-size: 12px;
-  line-height: 20.57142857px;
-  font-size: 1.2pxrem;
-  line-height: 2.057142857142857pxrem;
-}
-/*
- * Selected Text Styling
- */
-::selection {
-  color: #f08921;
-  background: #666666;
-}
 /**
  * Global Elements
  */
@@ -1145,24 +1163,6 @@ video {
 .richtext li {
   padding-left: 12px;
 }
-/**
- * Icon Moon Classes
- */
-[class^="icon-"],
-[class*=" icon-"] {
-  font-family: 'Icon Moon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.icon-arrow-down:before {
-  content: "\e600";
-}
 .mod-layout .container {
   max-width: 1140px;
 }
@@ -1185,6 +1185,7 @@ video {
   position: fixed;
   bottom: 1rem;
   left: 1rem;
+  z-index: 1000;
 }
 .skin-layout-dev .badge {
   font-family: Arial, sans-serif;

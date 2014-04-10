@@ -1,6 +1,7 @@
 <? include 'php/terrific.php'; ?>
 <? include 'php/helper.php'; ?>
-<? $dev = ($_SERVER['SERVER_NAME'] == 'localhost' ? true : false); ?>
+
+<? if ($_SERVER['SERVER_NAME'] == 'localhost' || strpos($_SERVER['SERVER_NAME'], '.loc')) { define('APP_ENV', 'dev'); } else {define('APP_ENV', 'prod'); } ?>
 
 <!doctype html>
 <html class="no-js">
@@ -24,11 +25,11 @@
 	<![endif]-->
 
 	<!-- Live Reload !-->
-	<? if($dev) { echo '<script>document.write(\'<script src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':35729/livereload.js?snipver=1"></\' + \'script>\')</script>'; } ?>
+	<? if(APP_ENV == 'dev') { echo '<script>document.write(\'<script src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':35729/livereload.js?snipver=1"></\' + \'script>\')</script>'; } ?>
 
 </head>
 
-<body class="mod mod-layout <?= ($dev == true ? 'skin-layout-dev ' : '') ?>">
+<body class="mod mod-layout <?= (APP_ENV == 'dev' ? 'skin-layout-dev ' : '') ?>">
 
 	<div class="container">
 

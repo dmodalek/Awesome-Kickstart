@@ -1,0 +1,27 @@
+/**
+ * Richtext
+ * - i.e. Links should have underlines in richtext, but not when used in the main nav
+ */
+
+.richtext {
+
+	/*
+	 * Headings
+ 	 */
+
+	h1, h2, h3, h4 {
+		color: @c-heading;
+	}
+
+	/*
+	 * Lists
+	 */
+
+	ul, ol, dd {
+		margin-left: (2 * @spacing / @base-font-size) * 1rem;
+	}
+
+	li {
+		padding-left: @spacing / 2;
+	}
+}
