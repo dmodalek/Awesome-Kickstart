@@ -15,7 +15,12 @@
 		<link rel="apple-touch-icon" href="img/apple-touch-icon-precomposed.png">
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
 		<link href="//ajax.googleapis.com" rel="dns-prefetch">
+
+		<? if(APP_ENV == 'dev') : ?>
 		<link href="cache/styles.css" rel="stylesheet">
+		<? else: ?>
+		<link href="cache/styles.min.css" rel="stylesheet">
+		<? endif; ?>
 
 		<script src="js/dyn/modernizr-2.6.2.min.js"></script>
 
@@ -85,7 +90,10 @@
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/dyn/jquery-1.11.0.min.js"><\/script>');</script>
+		<? if(APP_ENV == 'dev') : ?>
 		<script src="cache/scripts.js"></script>
-
+		<? else: ?>
+		<script src="cache/scripts.min.js"></script>
+		<? endif; ?>
 	</body>
 </html>

@@ -104,7 +104,7 @@ module.exports = function (grunt) {
 					banner: '<%= banner %>'
 				},
 				files: {
-					'<%= project.cache %>/styles.css': '<%= project.cache %>/styles.css'
+					'<%= project.cache %>/styles.min.css': '<%= project.cache %>/styles.css'
 				}
 			}
 		},
@@ -143,7 +143,7 @@ module.exports = function (grunt) {
 				},
 
 				files: {
-					'<%=project.cache%>/scripts.js': ['<%=project.scripts%>']
+					'<%=project.cache%>/scripts.min.js': ['<%=project.scripts%>']
 				}
 			}
 		},
@@ -204,7 +204,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('styles-dev', [
 		'less_imports',
 		'less',
-//		'autoprefixer'
+		'autoprefixer'
 	]);
 
 	grunt.registerTask('styles-min', [

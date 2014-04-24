@@ -167,7 +167,8 @@ figure {
  */
 hr {
   -moz-box-sizing: content-box;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
 }
 /**
@@ -273,7 +274,9 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -298,7 +301,7 @@ input[type="search"] {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
-  box-sizing: content-box;
+          box-sizing: content-box;
 }
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
@@ -387,7 +390,9 @@ th {
 .vertical-align {
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
@@ -506,6 +511,10 @@ small {
 /*
  * Selected Text Styling
  */
+::-moz-selection {
+  color: #f08921;
+  background: #666666;
+}
 ::selection {
   color: #f08921;
   background: #666666;
@@ -1028,7 +1037,8 @@ font-face {
  */
 * {
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 html {
   overflow-y: scroll;
@@ -1109,6 +1119,15 @@ a:active,
 a:focus {
   color: #2d5893;
   text-decoration: none;
+}
+/*
+ * Lists
+ */
+ul,
+li {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
 }
 /*
  * Images
@@ -1193,7 +1212,10 @@ video {
   line-height: 20.57142857px;
   font-size: 1.2rem;
   line-height: 2.057142857142857rem;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
   color: #f08921;
   border: 1px solid #f08921;
@@ -1215,7 +1237,7 @@ video {
 }
 .skin-layout-dev.debug-va {
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(95%, #ffffff), color-stop(95%, #efefef), to(#efefef));
-  background: -moz-linear-gradient(top, #ffffff, #ffffff 95%, #efefef 95%, #efefef);
-  background-size: auto 24px;
+  -webkit-background-size: auto 24px;
+          background-size: auto 24px;
 }
-/*# sourceMappingURL=../cache/styles.css.map */
+/*# sourceMappingURL=styles.css.map */
