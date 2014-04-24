@@ -2,5 +2,7 @@ node_modules
 .DS_Store
 .tmp
 .sass-cache
-style.min.css
-scripts.min.js
+styles.css
+styles.map.css
+scripts.js
+scripts.map.js
