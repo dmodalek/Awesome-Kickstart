@@ -1,8 +1,14 @@
-node_modules
-.DS_Store
-.tmp
-.sass-cache
+#
+# Frontend
+
+/node_modules/
+less-imports
 styles.css
 styles.map.css
 scripts.js
 scripts.map.js
+
+#
+# Other
+
+.DS_Store
