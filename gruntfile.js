@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 		less: {
 			options: {
 				sourceMap: true,
-				sourceMapFilename: '<%= project.cache %>/styles.map.css',
+				sourceMapFilename: '<%= project.cache %>/styles.css.map',
 				sourceMapRootpath: '../',
 				sourceMapBasepath: 'public'
 			}
@@ -124,9 +124,9 @@ module.exports = function (grunt) {
 				options: {
 					banner: '<%= banner %>',
 					beautify: true,
-					sourceMap: '<%=project.cache%>/scripts.map.js',
+					sourceMap: '<%=project.cache%>/scripts.js.map',
 					sourceMapRoot: '../',
-					sourceMappingURL: 'scripts.map.js'
+					sourceMappingURL: 'scripts.js.map'
 				},
 
 				files: {
@@ -137,9 +137,9 @@ module.exports = function (grunt) {
 			min: {
 				options: {
 					banner: '<%= banner %>',
-					sourceMap: '<%=project.cache%>/scripts.map.js',
+					sourceMap: '<%=project.cache%>/scripts.js.map',
 					sourceMapRoot: '../',
-					sourceMappingURL: 'scripts.map.js'
+					sourceMappingURL: 'scripts.js.map'
 				},
 
 				files: {

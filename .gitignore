@@ -4,9 +4,9 @@
 /node_modules/
 less-imports.less
 styles.css
-styles.map.css
+styles.css.map
 scripts.js
-scripts.map.js
+scripts.js.map
 
 #
 # Other
