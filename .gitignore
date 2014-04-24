@@ -2,7 +2,7 @@
 # Frontend
 
 /node_modules/
-less-imports
+less-imports.less
 styles.css
 styles.map.css
 scripts.js

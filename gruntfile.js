@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 		less: {
 			options: {
 				sourceMap: true,
-				sourceMapFilename: '<%= project.cache %>/styles.css.map',
+				sourceMapFilename: '<%= project.cache %>/styles.map.css',
 				sourceMapRootpath: '../',
 				sourceMapBasepath: 'public'
 			}
