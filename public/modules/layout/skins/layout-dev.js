@@ -87,17 +87,22 @@
 		this.toggleState = function($badge) {
 
 			var $html = $('html'),
+				$ctx = this.$ctx,
 				type = $badge.attr('href').replace('#','');
 
 			// Toggle active class on badge
 			$badge.toggleClass('active');
 
-			// Toggle debug-type class on body
-			$html.toggleClass('debug-' + type );
-
-			// If type = mod: Execute JS
-			if (type == 'mod') {
+			// Toggle debug-type class on html / body
+			if(type == 'va') {
+				$ctx.toggleClass('debug-' + type );
+			}
+			if(type == 'mod') {
+				$html.toggleClass('debug-' + type );
 				this.addModOutline();
+			}
+			if(type == 'grid') {
+				$html.toggleClass('debug-' + type );
 			}
 		};
 

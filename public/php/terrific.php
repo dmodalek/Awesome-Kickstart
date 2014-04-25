@@ -41,7 +41,7 @@ class Terrific {
 	protected $indent;
 	protected $skins = array();
 	protected $attribs = array();
-	protected $configs = array('tag' => 'div', 'fileext' => '.php');
+	protected $configs = array('tag' => 'div', 'fileext' => '.phtml');
 
 	/**
 	 * Constructor

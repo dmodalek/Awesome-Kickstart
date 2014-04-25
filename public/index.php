@@ -44,7 +44,7 @@
 
 	</header>
 
-	<main class="page-main richtext" role="main">
+	<main class="page-main base" role="main">
 
 		<div class="content">
 
