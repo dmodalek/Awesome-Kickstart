@@ -1,15 +1,22 @@
 .mod-layout {
 
-	.container {
-		max-width: @grid-fixed-width;
+	margin-top: @spacing;
+
+	.page-wrapper {
+		.center();
+		border: @spacing/4 solid @grey-bright;
 	}
 
-		.header {
-			padding: @spacing/2;
+		.page-header {
+			.cf();
 		}
 
-		.main {
-			padding-left: @spacing/2;
-			padding-right: @spacing/2;
+		.page-main {
+			.cf();
+			.col(12);
+		}
+
+		.page-footer {
+			.cf();
 		}
 }

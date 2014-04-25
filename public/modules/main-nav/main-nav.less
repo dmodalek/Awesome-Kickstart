@@ -1,0 +1,30 @@
+.mod-main-nav {
+
+	.col(5);
+
+	.inner {
+		height: @pageHeaderHeight;
+	}
+
+	///////////////////////////////////////////////////////////
+
+		.nav-list-l1 {
+			.vertical-align();
+			margin-bottom: 0;
+
+			> .item {
+				display: inline-block;
+				margin-right: @spacing/2;
+
+				&.item-current a,
+				&:hover a {
+					color: @c-hover;
+				}
+			}
+		}
+}
+
+
+
+
+

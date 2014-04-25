@@ -87,14 +87,14 @@
 
 		this.toggleState = function($badge) {
 
-			var $ctx = this.$ctx,
+			var $html = $('html'),
 				type = $badge.attr('href').replace('#','');
 
 			// Toggle active class on badge
 			$badge.toggleClass('active');
 
 			// Toggle debug-type class on body
-			$ctx.toggleClass('debug-' + type );
+			$html.toggleClass('debug-' + type );
 
 			// If type = mod: Execute JS
 			if (type == 'mod') {
