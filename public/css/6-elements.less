@@ -39,6 +39,10 @@ pre {
 	margin-bottom: (@spacing / @base-font-size)*1rem;
 }
 
+h1, h2, h3, h4 {
+	color: @c-heading;
+}
+
 /*
  * `hr` elements only take up a few pixels, so we need to give them special
  * treatment regarding vertical rhythm.
@@ -71,7 +75,14 @@ a {
 ul, li {
 	padding-left: 0;
 	margin-left: 0;
-	list-style: none;
+}
+
+ul, ol, dd {
+	margin-left: (2 * @spacing / @base-font-size) * 1rem;
+}
+
+li {
+	padding-left: @spacing / 2;
 }
 
 /*

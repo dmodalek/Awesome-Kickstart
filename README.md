@@ -55,31 +55,6 @@ Here are some of the main features:
 * Extremely lightweight footprint
 
 
-## File Overview
-
-````
-├── public
-│   ├── cache
-│   ├── css
-│   ├── fonts
-│   ├── img
-│   │	├── apple-touch-icon-precomposed.png
-│   │	└── favicon.ico
-│   ├── js
-│   ├── modules
-│   ├── php
-│   ├── .htaccess
-│   ├── 404.html
-│   └── index.html
-├── .editorconfig
-├── .gitignore
-├── .jshintrc
-├── CHANGELOG.md
-├── Gruntfile.js
-├── package.json
-└── README.md
-````
-
 ## Based on...
 
 * Terrific: [https://github.com/brunschgi/terrificjs)

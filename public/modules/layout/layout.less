@@ -1,22 +1,21 @@
 .mod-layout {
 
-	margin-top: @spacing;
-
 	.page-wrapper {
+		.cf();
 		.center();
-		border: @spacing/4 solid @grey-bright;
 	}
 
 		.page-header {
 			.cf();
+			margin-bottom: @spacing;
 		}
 
 		.page-main {
-			.cf();
 			.col(12);
+			margin-bottom: @spacing;
 		}
 
 		.page-footer {
-			.cf();
+			.col(12);
 		}
 }
