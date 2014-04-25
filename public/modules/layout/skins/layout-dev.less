@@ -1,7 +1,6 @@
 .skin-layout-dev {
 	
-	@dev-color: #F08921;
-	@dev-font-family: Arial, sans-serif;
+	@color-dev: #F08921;
 
 	.debug-badges {
 		position: fixed;
@@ -11,12 +10,11 @@
 	}
 
 		.badge {
-			font-family: @dev-font-family;
 			.font-size(12);
 			user-select: none;
 			cursor: pointer;
-			color: @dev-color;
-			border: 1px solid @dev-color;
+			color: @color-dev;
+			border: 1px solid @color-dev;
 			border-radius: 6px;
 			padding: 4px 12px;
 			background: fade(white, 80%);
@@ -24,7 +22,7 @@
 
 			&.active {
 				color: white;
-				background: fade(@dev-color, 80%);
+				background: fade(@color-dev, 80%);
 			}
 		}
 
@@ -32,7 +30,7 @@
 		display: block;
 		padding-left: @spacing/4;
 		color: white;
-		background-color: fade(@dev-color, 50%);
+		background-color: fade(@color-dev, 50%);
 	}
 
 	/*
