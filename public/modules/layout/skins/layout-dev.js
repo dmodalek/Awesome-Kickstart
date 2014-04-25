@@ -56,7 +56,6 @@
 
 				e.preventDefault();
 
-				//
 				$.proxy(self.toggleState($badge), self);
 
 				// Toggle Hash
@@ -141,7 +140,7 @@
 
 		this.addModOutline = function () {
 
-			var $ctx = this.$ctx;
+			var $ctx = $('html');
 
 			if ($ctx.hasClass('debug-mod')) {
 
