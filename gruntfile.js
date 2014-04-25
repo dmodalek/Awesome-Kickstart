@@ -221,6 +221,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('scripts-min', [
 		'jshint',
+		'uglify:dev',
 		'uglify:min'
 	]);
 };
