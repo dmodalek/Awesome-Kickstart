@@ -19,7 +19,7 @@
 			// Do stuff here
 			//...
 
-			console.log('Layout Module loaded');
+			log('Layout Module loaded');
 
 			// callback
 			callback();

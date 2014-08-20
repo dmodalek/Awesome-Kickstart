@@ -26,6 +26,34 @@ function module($name) {
 	return new Terrific($name);
 }
 
+/**
+ * Global function to include terrific partials in templates
+ *
+ * @param $name
+ * @return Terrific
+ */
+function partial($name, $options) {
+	$template = sprintf('%s/%s.phtml', get_template_directory().'/partials', $name);
+
+	if(file_exists($template)) {
+		ob_start();
+
+		// Provide data for the module
+		if ($options['data'] !== null) {
+			$data = (object) $options['data']; // assign data, convert to object
+		} else {
+			$data = (object) array(); // empty object
+		}
+
+		include $template;
+		return ob_get_clean();
+
+	} else {
+		return sprintf("<!-- Partial does not exists: %s -->", $template);
+	}
+}
+
+
 
 /**
  * Class Terrific

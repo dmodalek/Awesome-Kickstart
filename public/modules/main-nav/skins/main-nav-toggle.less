@@ -1,0 +1,31 @@
+.skin-main-nav-toggle {
+
+	//
+	// @ Mobile
+
+	@media (max-width: @tablet-max) {
+
+		.col(2);
+
+		.mobile-toggle {
+			line-height: @heightLogoMobile;
+
+			&.active {
+				.icon {
+					fill: @color-hover;
+				}
+			}
+		}
+	}
+
+	//
+	// @ Tablet & Desktop
+
+	@media (min-width: @tablet-min) {
+		display: none;
+	}
+}
+
+
+
+

@@ -1,0 +1,90 @@
+.skin-main-nav-items {
+
+	//
+	// @ All Viewports
+
+	.nav-list-l1 {
+
+		a {
+			.h3();
+		}
+
+	}
+
+	//
+	// @ Mobile
+
+	@media (max-width: @mobile-max) {
+
+		.col(12);
+
+		.nav-list-l1 {
+			.cf();
+			.nav-list();
+			width: 100%;
+			display: none;
+
+			> li {
+				display: block;
+				padding: @half-spacing 0;
+			}
+		}
+	}
+
+
+	//
+	// @ Tablet and up
+
+	@media (min-width: @tablet-min) {
+
+		.col(12);
+
+		.nav-list-l1 {
+			.nav-list();
+
+			> li {
+				margin-right: @spacing;
+
+				&.current_page_item a,
+				&.current-menu-item a,
+				&:hover a {
+					color: @color-hover;
+				}
+			}
+		}
+	}
+
+	//
+	// @ Tablet Med and up
+
+	@media (min-width: @tablet-med) {
+		.col(9);
+
+		.nav-list-l1 {
+
+			> li {
+				line-height: @heightLogoMobile;
+			}
+		}
+	}
+
+
+	//
+	// @ Desktop and up
+
+	@media (min-width: @desktop-min) {
+		.col(8);
+
+		.nav-list-l1 {
+			.nav-list();
+
+			> li {
+				line-height: @heightLogoDesktop;
+			}
+		}
+	}
+}
+
+
+
+

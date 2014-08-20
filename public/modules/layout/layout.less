@@ -1,21 +1,35 @@
 .mod-layout {
 
-	.page-wrapper {
+	.site-wrapper {
 		.cf();
-		.center();
 	}
 
-		.page-header {
-			.cf();
-			margin-bottom: @spacing;
+		.site-header {
+			background: @color-grey-light;
+			border-bottom: 1px solid @color-border;
+
+			> .inner {
+				.center();
+				.padbox();
+			}
 		}
 
-		.page-main {
-			.col(12);
-			margin-bottom: @spacing;
+		.site-main {
+			.center();
+			.padbox();
+			margin-bottom: @half-spacing;
+
+			> .inner {
+				.col();
+			}
 		}
 
-		.page-footer {
-			.cf();
+		.site-footer {
+			background: @color-grey-light;
+
+			> .inner {
+				.center();
+				.padbox();
+			}
 		}
 }

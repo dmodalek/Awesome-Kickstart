@@ -3,7 +3,6 @@
  */
 
 * {
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -13,12 +12,14 @@ html {
 }
 
 body {
-	.font-size(14);
+	font-size: @base-font-size;
+	line-height: @base-line-height;
 	font-family: @font-default;
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
 	color: @color-copy;
+	background-color: @color-background;
 
 }
 
@@ -35,12 +36,9 @@ pre {
 	.cf();
 	padding: 0;
 	margin-top: 0;
-	margin-bottom: (@spacing / @base-font-size)*1rem;
+	margin-bottom: @half-spacing;
 }
 
-h1, h2, h3, h4 {
-	color: @color-heading;
-}
 
 /*
  * `hr` elements only take up a few pixels, so we need to give them special
@@ -63,7 +61,7 @@ a {
 		text-decoration: none;
 	}
 	&:hover {
-
+		color: @color-hover;
 	}
 }
 
@@ -71,38 +69,54 @@ a {
  * Lists
  */
 
-ul, li {
-	padding-left: 0;
-	margin-left: 0;
-}
-
 ul, ol, dd {
 	margin-left: (2 * @spacing / @base-font-size) * 1rem;
 }
 
 li {
-	padding-left: @spacing / 2;
+	padding-left: 0;
+	margin-left: 0;
 }
 
-/*
- * Images
- */
-
-img {
-	height: auto;
-}
 
 /*
  * Forms
  */
 
-input[type="checkbox"],
-input[type="radio"] {
-	margin-right: @spacing / 2;
-}
 
-label[for] {
-	cursor: pointer;
+form {
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		margin-right: @spacing / 2;
+	}
+
+	input, textarea {
+		border: 1px solid #ccc;
+	}
+
+	input, textarea, select {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	input[type=submit] {
+
+		// @ Tablet and up
+		@media (min-width: @tablet-min) {
+			margin-left: 100px;
+		}
+	}
+
+	label[for] {
+		display: block;
+		cursor: pointer;
+
+		@media (min-width: @tablet-min) {
+			float: left;
+			width: 100px;
+		}
+	}
 }
 
 

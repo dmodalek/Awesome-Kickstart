@@ -1,23 +1,54 @@
 .mod-logo {
 
-	.col(7);
+	//
+	// @ Mobile
 
-	.inner {
-		height: @pageHeaderHeight;
-	}
+	@media (max-width: @mobile-max) {
 
-	///////////////////////////////////////////////////////////
+		.col(10);
 
-		.logo-link {
-			.vertical-align();
-			display: inline-block;
+		.inner {
+			text-align: right;
 		}
 
-			.img {
-				margin-right: @spacing;
+			.logo {
+				width: 200px;
+				height: @heightLogoMobile;
 			}
+	}
 
-			.title {
-				display: inline-block;
+	//
+	// @ Tablet
+
+	@media (min-width: @tablet-min) and (max-width: @tablet-max) {
+
+		.col(12);
+		margin-bottom: @half-spacing;
+
+			.logo {
+				width: 200px;
+				height: @heightLogoMobile;
 			}
+	}
+
+	//
+	// @ Tablet Med and up
+
+	@media (min-width: @tablet-med) {
+		.col(3);
+		margin-bottom: 0;
+	}
+
+	//
+	// @ Desktop and up
+
+	@media (min-width: @desktop-min) {
+
+		.col(4);
+
+		.logo {
+			width: 300px;
+			height: @heightLogoDesktop;
+		}
+	}
 }

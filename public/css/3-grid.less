@@ -4,14 +4,14 @@
 
 // Vars
 
+@grid-columns: 12;
 @grid-fixed-width: 1140px;
-@grid-fixed-gutter: 20px;
-@grid-max-cols: 12;
+@grid-fixed-gutter: 40;
 
 // Calculations
 
 @grid-fluid-gutter: percentage((100 / (@grid-fixed-width / @grid-fixed-gutter)) / 100);
-@grid-one-col: (100% - (@grid-fluid-gutter * @grid-max-cols)) / @grid-max-cols;
+@grid-one-col: (100% - (@grid-fluid-gutter * @grid-columns)) / @grid-columns;
 
 // Mixins
 
@@ -19,7 +19,7 @@
 	.cf();
 	margin-left: -@grid-fluid-gutter/2;
 	margin-right: -@grid-fluid-gutter/2;
-	.debug-grid(row, @grid-max-cols);
+	.debug-grid(row, @grid-columns);
 }
 
 .col(@cols: 12) {
@@ -27,18 +27,15 @@
 	margin-right: @grid-fluid-gutter/2;
 	float: left;
 	width: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols - 1));
-	width: @cols;
 	.debug-grid(col, @cols);
 }
 
 .push(@cols: 1) {
-	margin-left: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols + 1)) !important;
-	.debug-grid(push, @cols);
+	margin-left: @grid-fluid-gutter/2 + (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols)) !important;
 }
 
 .pull(@cols: 1) {
-	margin-left: (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols - 1));
-	.debug-grid(pull, @cols);
+	margin-left: -(@grid-fluid-gutter/2 + (@grid-one-col * @cols) + (@grid-fluid-gutter * (@cols - 1)))!important;
 }
 
 
@@ -56,10 +53,18 @@
 		.col(@counter);
 	}
 
+	.push-@{counter} {
+		.push(@counter);
+	}
+
+	.pull-@{counter} {
+		.pull(@counter);
+	}
+
 	.loop(@counter - 1);
 }
 
-.loop (@grid-max-cols);
+.loop (@grid-columns);
 
 
 ///////////////////////////////////////////////////////////
@@ -98,6 +103,8 @@
 	&:before {
 		margin: 10px 0 10px 0;
 		padding: 10px @grid-fixed-gutter/2;
+		border-left: 1px solid grey;
+		border-right: 1px solid grey;
 	}
 
 	&:before,
@@ -113,6 +120,8 @@
 	&:after {
 		margin-left: @grid-fluid-gutter/2;
 		margin-right: @grid-fluid-gutter/2;
+		border-left: 1px solid grey;
+		border-right: 1px solid grey;
 		background-color: fade(grey, 40%);
 	}
 }

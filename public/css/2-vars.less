@@ -4,10 +4,12 @@
 
 // first we set descriptive variables
 
+@color-white: #ffffff;
 @color-orange: #F08921;
 @color-blue: #2D5893;
-@color-grey-dark: #666666;
 @color-grey-light: #efefef;
+@color-grey-medium: #dddddd;
+@color-grey-dark: #666666;
 
 // then we set functional variables
 
@@ -15,7 +17,10 @@
 @color-copy: @color-grey-dark;
 @color-link: @color-blue;
 @color-hover: @color-orange;
-@color-border: @color-grey-dark;
+@color-active: @color-orange;
+@color-border: @color-grey-medium;
+@color-background: @color-white;
+
 
 /**
  * Font-sizes (in pixels).
@@ -23,6 +28,7 @@
 
 @base-font-size: 14px;
 @base-line-height: 24px;
+@line-height-ratio: @base-line-height / @base-font-size;
 
 @giga-size: 96px;
 @mega-size: 72px;
@@ -36,23 +42,36 @@
 @small-size: 12px;
 @micro-size: 10px;
 
+@icon-size: 24px;
+
 
 /*
  * Spacing
  */
 
 @spacing: @base-line-height;
+@half-spacing: @spacing / 2;
+@quart-spacing: @spacing / 4;
+
+
+/*
+ * Project
+ */
 
 @pageHeaderHeight: 250px;
+@heightLogoMobile: 60px;
+@heightLogoDesktop: 90px;
 
 
 /*
  * Mediaqueries
+ * use: @media (min-width: @desktop-min)
  */
 
-@phone-max: 499px;
+@mobile-max: 639px;
 
-@tablet-min: 500px;
-@tablet-max: 859px;
+@tablet-min: 640px;
+@tablet-med: 980px;
+@tablet-max: 1279px;
 
-@desktop-min: 860px;
+@desktop-min: 1280px;

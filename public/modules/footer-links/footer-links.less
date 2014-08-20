@@ -2,17 +2,25 @@
 
 	.col(12);
 
-	.inner {
-		float: right;
+
+	.nav-list-l1 {
+		.nav-list();
 	}
 
-	///////////////////////////////////////////////////////////
+	//
+	// @ Tablet and up
 
-		.nav-list-l1 {
-			.inline-list();
+	@media (min-width: @tablet-min) {
+
+		.inner {
+			float: right;
 		}
 
-			.item {
-				margin-left: @spacing/2;
+			.nav-list-l1 {
+
+				> li {
+					margin-left: @spacing;
+				}
 			}
+	}
 }

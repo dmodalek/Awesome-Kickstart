@@ -22,6 +22,9 @@
 			// Activate a badge on page load
 			this.activateBadges();
 
+			// Resize
+			this.onResize();
+
 			// call parent constructor
 			parent.on(callback);
 		};
@@ -31,7 +34,7 @@
 		this.addDebugBadges = function () {
 
 			var $ctx = this.$ctx,
-				$badgeContainer = $('<div class="debug-badges"></div>'),
+				$badgeContainer = $('<div class="awesome-debug"></div>'),
 				badgeNames = ['Grid', 'Mod', 'VA'];
 
 			$ctx.prepend($badgeContainer);
@@ -39,8 +42,11 @@
 			$.each(badgeNames, function (index, element) {
 
 				var $badge = $('<a href="#' + element.toLowerCase() + '" class="badge badge-' + element.toLowerCase() + '">' + element + '</a>');
-				$badgeContainer.prepend($badge);
+				$badgeContainer.append($badge);
 			});
+
+			// Add viewport info
+			$badgeContainer.append('<span class="viewport-info">@</span>');
 		};
 
 		this.onBadgeClick = function() {
@@ -60,6 +66,9 @@
 
 				// Toggle Hash
 				self.toggleHash(type);
+
+				// Update Mod Outlines
+				self.updateModOutline();
 			});
 		};
 
@@ -80,6 +89,15 @@
 					self.toggleState($badge);
 				});
 			}
+		};
+
+		this.onResize = function() {
+
+			var self = this;
+
+			$(window).resize(function() {
+				self.updateModOutline();
+			});
 		};
 
 		///////////////////////////////////////////////////////////
@@ -172,8 +190,6 @@
 					}
 
 					var $overlay = $('<span class="terrific-module">' + name + '</span>').css({
-						'zIndex': ($this.css('zIndex') + 1),
-						'position': positioning,
 						'width': dimension.width,
 						'height': dimension.height,
 						'top': position.top,
@@ -185,6 +201,15 @@
 				$('.terrific-module').remove();
 			}
 		};
+
+		///////////////////////////////////////////////////////////
+
+		this.updateModOutline = function () {
+			$('.terrific-module').remove();
+			this.addModOutline();
+		};
+
+		///////////////////////////////////////////////////////////
 	};
 
 

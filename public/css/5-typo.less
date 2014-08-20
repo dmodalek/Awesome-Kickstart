@@ -4,44 +4,54 @@
  */
 
 h1, .h1 {
-	.font-size(@h1-size);
+	font-size: @h1-size;
+	line-height: @h1-size * @line-height-ratio;
 	font-weight: normal;
 }
 
 h2, .h2 {
-	.font-size(@h2-size);
+	font-size: @h2-size;
+	line-height: @h2-size * @line-height-ratio;
 	font-weight: normal;
 }
 
 h3, .h3 {
-	.font-size(@h3-size);
+	font-size: @h3-size;
+	line-height: @h3-size * @line-height-ratio;
 	font-weight: normal;
 }
 
 h4, .h4 {
-	.font-size(@h4-size);
+	font-size: @h4-size;
+	line-height: @h4-size * @line-height-ratio;
 	font-weight: normal;
 }
 
 
 .giga {
-	.font-size(@giga-size);
+	font-size: @giga-size;
+	line-height: @giga-size * @line-height-ratio;
 }
 
 .mega {
-	.font-size(@mega-size);
+	font-size: @mega-size;
+	line-height: @mega-size * @line-height-ratio;
 }
 
-.kilo {
-	.font-size(@kilo-size);
+
+.copy {
+	font-size: @base-font-size;
+	line-height: @base-line-height;
 }
 
 .small {
-	.font-size(@small-size);
+	font-size: @small-size;
+	line-height: @small-size * @line-height-ratio;
 }
 
 .micro {
-	.font-size(@micro-size);
+	font-size: @micro-size;
+	line-height: @micro-size * @line-height-ratio;
 }
 
 /*
@@ -57,27 +67,26 @@ small {
  */
 
 ::selection {
-	color: @color-hover;
-	background: @color-copy;
+	background: fade(@color-copy, 20%);
 }
-
 
 /**
  * Fonts
  * - Give each font a name
  */
 
-@font-heading: Arial;
-@font-default: 'Open Sans', sans-serif;
+@font-default: 'Varela Round', sans-serif;
 @font-icons: 'Icon Moon';
 
-// Open Sans
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+// Valera round
+
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
 
 // Icon Moon
 
-font-face {
+@font-face {
 	font-family: 'Icon Moon';
 	src: url('../fonts/iconmoon/icomoon.eot?rofuzr');
 	src: url('../fonts/iconmoon/icomoon.eot?#iefixrofuzr') format('embedded-opentype'), url('../fonts/iconmoon/icomoon.woff?rofuzr') format('woff'), url('../fonts/iconmoon/icomoon.ttf?rofuzr') format('truetype'), url('../fonts/iconmoon/icomoon.svg?rofuzr#icomoon') format('svg');
@@ -91,17 +100,19 @@ font-face {
  */
 
 [class^="icon-"], [class*=" icon-"] {
-	font-family: @font-icons;
+	font-family: 'Icon Moon';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
+	font-size: @icon-size;
 	text-transform: none;
 	line-height: 1;
+
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-down:before {
-	content: "\e600";
+.icon-paragraph-left:before {
+	content: "\e601";
 }
