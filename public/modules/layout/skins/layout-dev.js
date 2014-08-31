@@ -86,7 +86,11 @@
 
 				$.each(types, function(index, type) {
 					$badge = $('.badge-'+type, $ctx);
-					self.toggleState($badge);
+
+					// proceed if there a badge with this class
+					if($badge.length) {
+						self.toggleState($badge);
+					}
 				});
 			}
 		};
